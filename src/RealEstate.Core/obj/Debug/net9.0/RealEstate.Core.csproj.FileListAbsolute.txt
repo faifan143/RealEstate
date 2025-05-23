@@ -1,0 +1,36 @@
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\bin\Debug\net9.0\RealEstate.Core.deps.json
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\bin\Debug\net9.0\RealEstate.Core.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\bin\Debug\net9.0\RealEstate.Core.pdb
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.csproj.AssemblyReference.cache
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.AssemblyInfoInputs.cache
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.AssemblyInfo.cs
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.csproj.CoreCompileInputs.cache
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\refint\RealEstate.Core.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.pdb
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\ref\RealEstate.Core.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\bin\Debug\net9.0\RealEstate.Core.deps.json
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\bin\Debug\net9.0\RealEstate.Core.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\bin\Debug\net9.0\RealEstate.Core.pdb
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.csproj.AssemblyReference.cache
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.AssemblyInfoInputs.cache
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.AssemblyInfo.cs
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.csproj.CoreCompileInputs.cache
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\refint\RealEstate.Core.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.pdb
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\ref\RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.Core\bin\Debug\net9.0\RealEstate.Core.deps.json
+D:\mcp\RealEstate\src\RealEstate.Core\bin\Debug\net9.0\RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.Core\bin\Debug\net9.0\RealEstate.Core.pdb
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.csproj.AssemblyReference.cache
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.AssemblyInfoInputs.cache
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.AssemblyInfo.cs
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.csproj.CoreCompileInputs.cache
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\refint\RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.pdb
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\ref\RealEstate.Core.dll

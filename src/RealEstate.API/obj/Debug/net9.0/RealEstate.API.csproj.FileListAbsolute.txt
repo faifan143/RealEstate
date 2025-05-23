@@ -1,0 +1,465 @@
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.csproj.AssemblyReference.cache
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.AssemblyInfoInputs.cache
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.AssemblyInfo.cs
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.csproj.CoreCompileInputs.cache
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.MvcApplicationPartsAssemblyInfo.cs
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.MvcApplicationPartsAssemblyInfo.cache
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\appsettings.Development.json
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\appsettings.json
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.staticwebassets.endpoints.json
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.exe
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.deps.json
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.runtimeconfig.json
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.pdb
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\AutoMapper.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\FluentValidation.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\FluentValidation.AspNetCore.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Humanizer.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Mono.TextTemplating.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Npgsql.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.CodeDom.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.Convention.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.Hosting.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.Runtime.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.TypedParts.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.Core.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.Infrastructure.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.Core.pdb
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.Infrastructure.pdb
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\scopedcss\bundle\RealEstate.API.styles.css
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets.build.json
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets.development.json
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.RealEstate.API.Microsoft.AspNetCore.StaticWebAssets.props
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.RealEstate.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.build.RealEstate.API.props
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.RealEstate.API.props
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.RealEstate.API.props
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets.pack.json
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEsta.FBD3F776.Up2Date
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\refint\RealEstate.API.dll
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.pdb
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.genruntimeconfig.cache
+E:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\ref\RealEstate.API.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\appsettings.Development.json
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\appsettings.json
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.staticwebassets.endpoints.json
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.exe
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.deps.json
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.runtimeconfig.json
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.pdb
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\AutoMapper.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\FluentValidation.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\FluentValidation.AspNetCore.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Humanizer.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Mono.TextTemplating.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Npgsql.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.CodeDom.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.Convention.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.Hosting.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.Runtime.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.TypedParts.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.Core.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.Infrastructure.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.Core.pdb
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.Infrastructure.pdb
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.csproj.AssemblyReference.cache
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.AssemblyInfoInputs.cache
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.AssemblyInfo.cs
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.csproj.CoreCompileInputs.cache
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\scopedcss\bundle\RealEstate.API.styles.css
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets.build.json
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets.development.json
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.RealEstate.API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.RealEstate.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.build.RealEstate.API.props
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.RealEstate.API.props
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.RealEstate.API.props
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets.pack.json
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEsta.FBD3F776.Up2Date
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\refint\RealEstate.API.dll
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.pdb
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.genruntimeconfig.cache
+D:\Projects Repository\FinalYearProjects\RealEstate\src\RealEstate.API\obj\Debug\net9.0\ref\RealEstate.API.dll
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.csproj.AssemblyReference.cache
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.AssemblyInfoInputs.cache
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.AssemblyInfo.cs
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.csproj.CoreCompileInputs.cache
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.MvcApplicationPartsAssemblyInfo.cs
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.MvcApplicationPartsAssemblyInfo.cache
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\appsettings.Development.json
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\appsettings.json
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.staticwebassets.endpoints.json
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.exe
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.deps.json
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.runtimeconfig.json
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.API.pdb
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\AutoMapper.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\FluentValidation.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\FluentValidation.AspNetCore.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Humanizer.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Mono.TextTemplating.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Npgsql.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.CodeDom.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.Convention.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.Hosting.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.Runtime.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.Composition.TypedParts.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.Infrastructure.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.Core.pdb
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net9.0\RealEstate.Infrastructure.pdb
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\scopedcss\bundle\RealEstate.API.styles.css
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets.build.json
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets.development.json
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.RealEstate.API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.RealEstate.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.build.RealEstate.API.props
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.RealEstate.API.props
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.RealEstate.API.props
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\staticwebassets.pack.json
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEsta.FBD3F776.Up2Date
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.dll
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\refint\RealEstate.API.dll
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.pdb
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.genruntimeconfig.cache
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\ref\RealEstate.API.dll
