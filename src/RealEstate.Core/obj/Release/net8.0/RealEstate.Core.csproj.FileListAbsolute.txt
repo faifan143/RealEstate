@@ -11,3 +11,16 @@
 /var/www/realestate/src/RealEstate.Core/obj/Release/net8.0/refint/RealEstate.Core.dll
 /var/www/realestate/src/RealEstate.Core/obj/Release/net8.0/RealEstate.Core.pdb
 /var/www/realestate/src/RealEstate.Core/obj/Release/net8.0/ref/RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.Core\bin\Release\net8.0\RealEstate.Core.deps.json
+D:\mcp\RealEstate\src\RealEstate.Core\bin\Release\net8.0\RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.Core\bin\Release\net8.0\RealEstate.Core.pdb
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Release\net8.0\RealEstate.Core.csproj.AssemblyReference.cache
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Release\net8.0\RealEstate.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Release\net8.0\RealEstate.Core.AssemblyInfoInputs.cache
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Release\net8.0\RealEstate.Core.AssemblyInfo.cs
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Release\net8.0\RealEstate.Core.csproj.CoreCompileInputs.cache
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Release\net8.0\RealEstate.Core.sourcelink.json
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Release\net8.0\RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Release\net8.0\refint\RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Release\net8.0\RealEstate.Core.pdb
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Release\net8.0\ref\RealEstate.Core.dll

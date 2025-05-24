@@ -145,7 +145,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 // Execute SQL to add missing columns
-await DatabaseUpdater.AddMissingColumns(builder.Configuration.GetConnectionString("DefaultConnection") ?? 
+DatabaseUpdater.AddMissingColumns(builder.Configuration.GetConnectionString("DefaultConnection") ?? 
     throw new InvalidOperationException("Connection string not found"));
 
 // Use custom exception handling middleware

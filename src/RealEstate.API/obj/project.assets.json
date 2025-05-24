@@ -3757,19 +3757,19 @@
     ]
   },
   "packageFolders": {
-    "/root/.nuget/packages/": {}
+    "C:\\Users\\DerMokk\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/var/www/realestate/src/RealEstate.API/RealEstate.API.csproj",
+      "projectUniqueName": "D:\\mcp\\RealEstate\\src\\RealEstate.API\\RealEstate.API.csproj",
       "projectName": "RealEstate.API",
-      "projectPath": "/var/www/realestate/src/RealEstate.API/RealEstate.API.csproj",
-      "packagesPath": "/root/.nuget/packages/",
-      "outputPath": "/var/www/realestate/src/RealEstate.API/obj/",
+      "projectPath": "D:\\mcp\\RealEstate\\src\\RealEstate.API\\RealEstate.API.csproj",
+      "packagesPath": "C:\\Users\\DerMokk\\.nuget\\packages\\",
+      "outputPath": "D:\\mcp\\RealEstate\\src\\RealEstate.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/root/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\DerMokk\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -3781,11 +3781,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/var/www/realestate/src/RealEstate.Core/RealEstate.Core.csproj": {
-              "projectPath": "/var/www/realestate/src/RealEstate.Core/RealEstate.Core.csproj"
+            "D:\\mcp\\RealEstate\\src\\RealEstate.Core\\RealEstate.Core.csproj": {
+              "projectPath": "D:\\mcp\\RealEstate\\src\\RealEstate.Core\\RealEstate.Core.csproj"
             },
-            "/var/www/realestate/src/RealEstate.Infrastructure/RealEstate.Infrastructure.csproj": {
-              "projectPath": "/var/www/realestate/src/RealEstate.Infrastructure/RealEstate.Infrastructure.csproj"
+            "D:\\mcp\\RealEstate\\src\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj": {
+              "projectPath": "D:\\mcp\\RealEstate\\src\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj"
             }
           }
         }
@@ -3794,7 +3794,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -3850,6 +3856,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.16, 8.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.16, 8.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.16, 8.0.16]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.16, 8.0.16]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -3858,7 +3882,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.116/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

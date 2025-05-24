@@ -1,0 +1,13 @@
+D:\mcp\RealEstate\src\RealEstate.Core\bin\Debug\net8.0\RealEstate.Core.deps.json
+D:\mcp\RealEstate\src\RealEstate.Core\bin\Debug\net8.0\RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.Core\bin\Debug\net8.0\RealEstate.Core.pdb
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net8.0\RealEstate.Core.csproj.AssemblyReference.cache
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net8.0\RealEstate.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net8.0\RealEstate.Core.AssemblyInfoInputs.cache
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net8.0\RealEstate.Core.AssemblyInfo.cs
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net8.0\RealEstate.Core.csproj.CoreCompileInputs.cache
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net8.0\RealEstate.Core.sourcelink.json
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net8.0\RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net8.0\refint\RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net8.0\RealEstate.Core.pdb
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net8.0\ref\RealEstate.Core.dll
