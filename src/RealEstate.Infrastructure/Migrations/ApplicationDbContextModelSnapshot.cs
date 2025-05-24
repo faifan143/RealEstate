@@ -180,9 +180,6 @@ namespace RealEstate.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<bool>("IsPhoneVerified")
-                        .HasColumnType("boolean");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("boolean");
 
@@ -205,12 +202,6 @@ namespace RealEstate.Infrastructure.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("boolean");
-
-                    b.Property<string>("PhoneVerificationCode")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("PhoneVerificationExpiry")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("ProfilePictureUrl")
                         .HasColumnType("text");

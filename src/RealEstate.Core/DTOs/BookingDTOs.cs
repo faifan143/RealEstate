@@ -4,12 +4,19 @@ using RealEstate.Core.Enums;
 
 namespace RealEstate.Core.DTOs
 {
+    public class PropertyBasicInfoDto
+    {
+        public string Title { get; set; } = string.Empty;
+        public string MainImageUrl { get; set; } = string.Empty;
+        public string Location { get; set; } = string.Empty;
+        public decimal Price { get; set; }
+    }
+
     public class BookingDto
     {
         public Guid Id { get; set; }
         public Guid PropertyId { get; set; }
-        public string PropertyTitle { get; set; } = string.Empty;
-        public string PropertyLocation { get; set; } = string.Empty;
+        public string UserId { get; set; } = string.Empty;
         public BookingStatus Status { get; set; }
         public DateTime RequestDate { get; set; }
         public DateTime? VisitDateTime { get; set; }
@@ -17,6 +24,20 @@ namespace RealEstate.Core.DTOs
         public string ContactPhone { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         public bool IsDirectBooking { get; set; }
+        public PropertyBasicInfoDto? Property { get; set; }
+
+        public string GetStatusText()
+        {
+            return Status switch
+            {
+                BookingStatus.Pending => "في الانتظار",
+                BookingStatus.Approved => "موافق عليه",
+                BookingStatus.Rejected => "مرفوض",
+                BookingStatus.Canceled => "ملغي",
+                BookingStatus.Completed => "مكتمل",
+                _ => "غير معروف",
+            };
+        }
     }
 
     public class BookingCreateDto
@@ -55,6 +76,7 @@ namespace RealEstate.Core.DTOs
         public string Message { get; set; } = string.Empty;
         public bool Success { get; set; }
         public string ResponseMessage { get; set; } = string.Empty;
+        public PropertyBasicInfoDto? Property { get; set; }
     }
 
     public class BookingFilterParameters

@@ -17,6 +17,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using RealEstate.API;
 using RealEstate.API.Extensions;
 using RealEstate.API.Middleware;
 using RealEstate.Core.Entities;
@@ -76,8 +77,11 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 
-// Add AutoMapper
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+// Add HttpContextAccessor for accessing the request context in services
+builder.Services.AddHttpContextAccessor();
+
+// Configure AutoMapper with HttpContextAccessor
+builder.Services.ConfigureAutoMapper();
 
 // Configure Swagger
 builder.Services.AddSwaggerGen(c =>
@@ -119,6 +123,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Configure static file serving for uploaded images
+app.UseStaticFiles();
+
+// Execute SQL to add missing columns
+await DatabaseUpdater.AddMissingColumns(builder.Configuration.GetConnectionString("DefaultConnection") ?? 
+    throw new InvalidOperationException("Connection string not found"));
 
 // Use custom exception handling middleware
 app.UseMiddleware<ExceptionMiddleware>();
@@ -187,6 +198,20 @@ using (var scope = app.Services.CreateScope())
     dbContext.Database.EnsureCreated();
 }
 
+// Create directories for image uploads if they don't exist
+var imagesDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+var propertiesImagesDirectory = Path.Combine(imagesDirectory, "properties");
+
+if (!Directory.Exists(imagesDirectory))
+{
+    Directory.CreateDirectory(imagesDirectory);
+}
+
+if (!Directory.Exists(propertiesImagesDirectory))
+{
+    Directory.CreateDirectory(propertiesImagesDirectory);
+}
+
 // Start the application and display server information
 await app.StartAsync();
 
@@ -197,7 +222,7 @@ var addresses = serverAddressesFeature?.Addresses;
 Console.WriteLine("\n========== SERVER INFORMATION ==========");
 Console.WriteLine($"Environment: {app.Environment.EnvironmentName}");
 Console.WriteLine($"Application Name: RealEstate API");
-Console.WriteLine($"Start Time: {DateTime.Now}");
+Console.WriteLine($"Start Time: {DateTime.UtcNow}");
 
 if (addresses != null && addresses.Any())
 {

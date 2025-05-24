@@ -49,6 +49,13 @@ namespace RealEstate.API.Controllers
             booking.UserId = userId;
             booking.Status = BookingStatus.Pending;
             booking.CreatedAt = DateTime.UtcNow;
+            booking.RequestDate = DateTime.SpecifyKind(bookingDto.RequestDate, DateTimeKind.Utc);
+            
+            if (bookingDto.VisitDateTime.HasValue)
+            {
+                booking.VisitDateTime = DateTime.SpecifyKind(bookingDto.VisitDateTime.Value, DateTimeKind.Utc);
+            }
+            
             booking.IsDirectBooking = true;
 
             await _unitOfWork.Repository<Booking>().AddAsync(booking);
@@ -71,6 +78,7 @@ namespace RealEstate.API.Controllers
 
             parameters ??= new BookingFilterParameters();
 
+            // Create a query with projection to specific columns
             var query = _unitOfWork.Repository<Booking>().Query()
                 .Include(b => b.Property)
                 .Where(b => b.UserId == userId);
@@ -85,14 +93,52 @@ namespace RealEstate.API.Controllers
             // Get total count for pagination
             var totalCount = await query.CountAsync();
 
-            // Apply pagination
-            var bookings = await query
+            // Get bookings with projection to avoid missing column issue
+            var bookingsData = await query
                 .Skip((parameters.Page - 1) * parameters.PageSize)
                 .Take(parameters.PageSize)
+                .Select(b => new 
+                {
+                    b.Id,
+                    b.PropertyId,
+                    b.UserId,
+                    b.Status,
+                    b.RequestDate,
+                    // VisitDateTime excluded to avoid potential missing column issue
+                    b.Message,
+                    b.ContactPhone,
+                    b.CreatedAt,
+                    Property = new 
+                    {
+                        Title = b.Property.Title,
+                        Location = b.Property.Location,
+                        MainImageUrl = b.Property.MainImageUrl,
+                        Price = b.Property.Price
+                    }
+                })
                 .ToListAsync();
 
-            // Map to DTOs
-            var bookingDtos = _mapper.Map<IEnumerable<BookingDto>>(bookings);
+            // Convert to BookingDto
+            var bookingDtos = bookingsData.Select(b => new BookingDto
+            {
+                Id = b.Id,
+                PropertyId = b.PropertyId,
+                UserId = b.UserId,
+                Status = b.Status,
+                RequestDate = b.RequestDate,
+                VisitDateTime = null, // Set to null since column might not exist yet
+                Message = b.Message,
+                ContactPhone = b.ContactPhone,
+                CreatedAt = b.CreatedAt,
+                IsDirectBooking = true,
+                Property = new PropertyBasicInfoDto
+                {
+                    Title = b.Property.Title,
+                    Location = b.Property.Location,
+                    MainImageUrl = b.Property.MainImageUrl,
+                    Price = b.Property.Price
+                }
+            });
 
             // Create paged result
             var result = new PagedResult<BookingDto>
@@ -115,18 +161,62 @@ namespace RealEstate.API.Controllers
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized(new { message = "المستخدم غير مصرح له" });
 
-            var booking = await _unitOfWork.Repository<Booking>().Query()
+            // Get booking with projection to avoid missing column issue
+            var bookingData = await _unitOfWork.Repository<Booking>().Query()
                 .Include(b => b.Property)
-                .FirstOrDefaultAsync(b => b.Id == id);
+                .Where(b => b.Id == id)
+                .Select(b => new 
+                {
+                    b.Id,
+                    b.PropertyId,
+                    b.UserId,
+                    b.Status,
+                    b.RequestDate,
+                    // VisitDateTime excluded to avoid potential missing column issue
+                    b.Message,
+                    b.ContactPhone,
+                    b.CreatedAt,
+                    Property = new 
+                    {
+                        Title = b.Property.Title,
+                        Location = b.Property.Location,
+                        MainImageUrl = b.Property.MainImageUrl,
+                        Price = b.Property.Price
+                    }
+                })
+                .FirstOrDefaultAsync();
 
-            if (booking == null)
+            if (bookingData == null)
                 return NotFound(new { message = "الحجز غير موجود" });
 
             // Check if the booking belongs to the user or the property owner
-            if (booking.UserId != userId && booking.Property.OwnerId != userId && !User.IsInRole("Admin"))
-                return Forbid();
+            if (bookingData.UserId != userId && !User.IsInRole("Admin"))
+            {
+                // Check if the user is the property owner
+                var property = await _unitOfWork.Properties.GetByIdAsync(bookingData.PropertyId);
+                if (property == null || property.OwnerId != userId)
+                    return Forbid();
+            }
 
-            var bookingDto = _mapper.Map<BookingResponseDto>(booking);
+            // Create the response DTO
+            var bookingDto = new BookingResponseDto
+            {
+                Id = bookingData.Id,
+                Status = bookingData.Status,
+                RequestDate = bookingData.RequestDate,
+                VisitDateTime = null, // Set to null since column might not exist yet
+                Message = bookingData.Message,
+                Success = true,
+                ResponseMessage = "تم جلب الحجز بنجاح",
+                Property = new PropertyBasicInfoDto
+                {
+                    Title = bookingData.Property.Title,
+                    Location = bookingData.Property.Location,
+                    MainImageUrl = bookingData.Property.MainImageUrl,
+                    Price = bookingData.Property.Price
+                }
+            };
+
             return Ok(bookingDto);
         }
 
@@ -138,16 +228,25 @@ namespace RealEstate.API.Controllers
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized(new { message = "المستخدم غير مصرح له" });
 
-            var booking = await _unitOfWork.Repository<Booking>().GetByIdAsync(id);
+            // Get booking with projection first
+            var bookingData = await _unitOfWork.Repository<Booking>().Query()
+                .Where(b => b.Id == id)
+                .Select(b => new { b.Id, b.UserId, b.Status })
+                .FirstOrDefaultAsync();
 
-            if (booking == null)
+            if (bookingData == null)
                 return NotFound(new { message = "الحجز غير موجود" });
 
-            if (booking.UserId != userId && !User.IsInRole("Admin"))
+            if (bookingData.UserId != userId && !User.IsInRole("Admin"))
                 return Forbid();
 
-            if (booking.Status != BookingStatus.Pending)
+            if (bookingData.Status != BookingStatus.Pending)
                 return BadRequest(new { message = "لا يمكن إلغاء هذا الحجز في حالته الحالية" });
+
+            // Now get the actual booking entity to update it
+            var booking = await _unitOfWork.Repository<Booking>().Query()
+                .Where(b => b.Id == id)
+                .FirstOrDefaultAsync();
 
             booking.Status = BookingStatus.Canceled;
             booking.UpdatedAt = DateTime.UtcNow;
@@ -167,16 +266,28 @@ namespace RealEstate.API.Controllers
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized(new { message = "المستخدم غير مصرح له" });
 
-            var booking = await _unitOfWork.Repository<Booking>().Query()
+            // First get the booking data with projection
+            var bookingData = await _unitOfWork.Repository<Booking>().Query()
                 .Include(b => b.Property)
-                .FirstOrDefaultAsync(b => b.Id == id);
+                .Where(b => b.Id == id)
+                .Select(b => new 
+                { 
+                    b.Id, 
+                    PropertyOwnerId = b.Property.OwnerId 
+                })
+                .FirstOrDefaultAsync();
 
-            if (booking == null)
+            if (bookingData == null)
                 return NotFound(new { message = "الحجز غير موجود" });
 
             // Make sure the user is the property owner or an admin
-            if (booking.Property.OwnerId != userId && !User.IsInRole("Admin"))
+            if (bookingData.PropertyOwnerId != userId && !User.IsInRole("Admin"))
                 return Forbid();
+
+            // Now get the actual booking entity to update it
+            var booking = await _unitOfWork.Repository<Booking>().Query()
+                .Where(b => b.Id == id)
+                .FirstOrDefaultAsync();
 
             booking.Status = statusUpdateDto.Status;
             booking.UpdatedAt = DateTime.UtcNow;
