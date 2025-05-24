@@ -217,37 +217,6 @@ using (var scope = app.Services.CreateScope())
     dbContext.Database.EnsureCreated();
 }
 
-// First apply EF Core migrations
-using (var scope = app.Services.CreateScope())
-{
-    try
-    {
-        var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-        
-        // Ensure the database exists and migrate to the latest schema
-        dbContext.Database.Migrate();
-        
-        Console.WriteLine("Database migrations applied successfully");
-        
-        // Now that we know the tables exist, we can run the additional columns script
-        string connectionString = app.Configuration.GetConnectionString("DefaultConnection") ?? "";
-        if (!string.IsNullOrEmpty(connectionString))
-        {
-            try
-            {
-                DatabaseUpdater.AddMissingColumns(connectionString);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error adding missing columns: {ex.Message}. This is non-fatal, continuing...");
-            }
-        }
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Error applying migrations: {ex.Message}");
-    }
-}
 
 // Create directories for image uploads if they don't exist
 var imagesDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
