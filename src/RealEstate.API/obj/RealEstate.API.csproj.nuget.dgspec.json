@@ -1,36 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "D:\\mcp\\RealEstate\\src\\RealEstate.API\\RealEstate.API.csproj": {}
+    "/var/www/realestate/src/RealEstate.API/RealEstate.API.csproj": {}
   },
   "projects": {
-    "D:\\mcp\\RealEstate\\src\\RealEstate.API\\RealEstate.API.csproj": {
+    "/var/www/realestate/src/RealEstate.API/RealEstate.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\mcp\\RealEstate\\src\\RealEstate.API\\RealEstate.API.csproj",
+        "projectUniqueName": "/var/www/realestate/src/RealEstate.API/RealEstate.API.csproj",
         "projectName": "RealEstate.API",
-        "projectPath": "D:\\mcp\\RealEstate\\src\\RealEstate.API\\RealEstate.API.csproj",
-        "packagesPath": "C:\\Users\\DerMokk\\.nuget\\packages\\",
-        "outputPath": "D:\\mcp\\RealEstate\\src\\RealEstate.API\\obj\\",
+        "projectPath": "/var/www/realestate/src/RealEstate.API/RealEstate.API.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/var/www/realestate/src/RealEstate.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DerMokk\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\mcp\\RealEstate\\src\\RealEstate.Core\\RealEstate.Core.csproj": {
-                "projectPath": "D:\\mcp\\RealEstate\\src\\RealEstate.Core\\RealEstate.Core.csproj"
+              "/var/www/realestate/src/RealEstate.Core/RealEstate.Core.csproj": {
+                "projectPath": "/var/www/realestate/src/RealEstate.Core/RealEstate.Core.csproj"
               },
-              "D:\\mcp\\RealEstate\\src\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj": {
-                "projectPath": "D:\\mcp\\RealEstate\\src\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj"
+              "/var/www/realestate/src/RealEstate.Infrastructure/RealEstate.Infrastructure.csproj": {
+                "projectPath": "/var/www/realestate/src/RealEstate.Infrastructure/RealEstate.Infrastructure.csproj"
               }
             }
           }
@@ -39,17 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
@@ -61,25 +55,25 @@
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[8.0.3, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[8.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -109,31 +103,31 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.116/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\mcp\\RealEstate\\src\\RealEstate.Core\\RealEstate.Core.csproj": {
+    "/var/www/realestate/src/RealEstate.Core/RealEstate.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\mcp\\RealEstate\\src\\RealEstate.Core\\RealEstate.Core.csproj",
+        "projectUniqueName": "/var/www/realestate/src/RealEstate.Core/RealEstate.Core.csproj",
         "projectName": "RealEstate.Core",
-        "projectPath": "D:\\mcp\\RealEstate\\src\\RealEstate.Core\\RealEstate.Core.csproj",
-        "packagesPath": "C:\\Users\\DerMokk\\.nuget\\packages\\",
-        "outputPath": "D:\\mcp\\RealEstate\\src\\RealEstate.Core\\obj\\",
+        "projectPath": "/var/www/realestate/src/RealEstate.Core/RealEstate.Core.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/var/www/realestate/src/RealEstate.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DerMokk\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -141,17 +135,11 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
@@ -178,34 +166,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.116/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\mcp\\RealEstate\\src\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj": {
+    "/var/www/realestate/src/RealEstate.Infrastructure/RealEstate.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\mcp\\RealEstate\\src\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
+        "projectUniqueName": "/var/www/realestate/src/RealEstate.Infrastructure/RealEstate.Infrastructure.csproj",
         "projectName": "RealEstate.Infrastructure",
-        "projectPath": "D:\\mcp\\RealEstate\\src\\RealEstate.Infrastructure\\RealEstate.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\DerMokk\\.nuget\\packages\\",
-        "outputPath": "D:\\mcp\\RealEstate\\src\\RealEstate.Infrastructure\\obj\\",
+        "projectPath": "/var/www/realestate/src/RealEstate.Infrastructure/RealEstate.Infrastructure.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/var/www/realestate/src/RealEstate.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DerMokk\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\mcp\\RealEstate\\src\\RealEstate.Core\\RealEstate.Core.csproj": {
-                "projectPath": "D:\\mcp\\RealEstate\\src\\RealEstate.Core\\RealEstate.Core.csproj"
+              "/var/www/realestate/src/RealEstate.Core/RealEstate.Core.csproj": {
+                "projectPath": "/var/www/realestate/src/RealEstate.Core/RealEstate.Core.csproj"
               }
             }
           }
@@ -214,35 +202,29 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[8.0.3, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[8.0.2, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -265,7 +247,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.116/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
