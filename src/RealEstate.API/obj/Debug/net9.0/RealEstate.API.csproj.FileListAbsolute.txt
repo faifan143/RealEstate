@@ -463,3 +463,4 @@ D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\refint\RealEstate.API.dll
 D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.pdb
 D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.genruntimeconfig.cache
 D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\ref\RealEstate.API.dll
+D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net9.0\RealEstate.API.sourcelink.json

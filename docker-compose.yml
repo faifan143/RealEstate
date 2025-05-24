@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15
+    container_name: realestate-postgres
+    environment:
+      POSTGRES_DB: RealEstateDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - realestate-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # .NET API Application
+  api:
+    build:
+      context: .
+      dockerfile: src/RealEstate.API/Dockerfile
+    container_name: realestate-api
+    ports:
+      - "5268:5268"
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=RealEstateDb;Username=postgres;Password=123
+      - ASPNETCORE_ENVIRONMENT=Production
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - realestate-network
+
+# Shared volumes
+volumes:
+  postgres-data:
+    name: realestate-postgres-data
+
+# Shared networks
+networks:
+  realestate-network:
+    name: realestate-network 

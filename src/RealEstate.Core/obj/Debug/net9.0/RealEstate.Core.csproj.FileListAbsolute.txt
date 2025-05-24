@@ -34,3 +34,4 @@ D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.dll
 D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\refint\RealEstate.Core.dll
 D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.pdb
 D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\ref\RealEstate.Core.dll
+D:\mcp\RealEstate\src\RealEstate.Core\obj\Debug\net9.0\RealEstate.Core.sourcelink.json

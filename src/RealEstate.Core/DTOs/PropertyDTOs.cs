@@ -37,24 +37,6 @@ namespace RealEstate.Core.DTOs
         public DateTime? UpdatedAt { get; set; }
     }
 
-    public class PropertyImageDto
-    {
-        public Guid Id { get; set; }
-        public string Url { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-    }
-
-    public class UserUploadedImageDto
-    {
-        public Guid Id { get; set; }
-        public string ImageUrl { get; set; } = string.Empty;
-        public string FileName { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-        public DateTime UploadedAt { get; set; }
-        public bool IsApproved { get; set; }
-        public string UserName { get; set; } = string.Empty;
-    }
-
     public class PropertyOwnerDto
     {
         public string Id { get; set; } = string.Empty;
@@ -159,27 +141,5 @@ namespace RealEstate.Core.DTOs
         public int CurrentPage { get; set; }
         public int PageSize { get; set; }
         public IEnumerable<T> Items { get; set; } = new List<T>();
-    }
-
-    // Image upload DTOs
-    public class ImageUploadDto
-    {
-        [Required]
-        public Guid PropertyId { get; set; }
-        
-        [Required]
-        public string ImageUrl { get; set; } = string.Empty;
-        
-        [Required]
-        public string FileName { get; set; } = string.Empty;
-        
-        public string Description { get; set; } = string.Empty;
-    }
-
-    public class ImageUploadResponseDto
-    {
-        public Guid Id { get; set; }
-        public string Message { get; set; } = string.Empty;
-        public bool Success { get; set; }
     }
 }

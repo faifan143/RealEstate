@@ -1,0 +1,30 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Build and temporary files
+**/bin/
+**/obj/
+**/out/
+**/TestResults/
+**/.vs/
+**/.vscode/
+**/.idea/
+**/node_modules/
+**/wwwroot/lib/
+
+# Others
+LICENSE
+README.md
+*.md
+*.yml
+*.ps1
+*.cmd
+*.sh
+!init-db.sh 

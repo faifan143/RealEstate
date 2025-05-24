@@ -1,12 +1,20 @@
 using System;
+using System.Linq;
+using System.Net;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using RealEstate.API.Extensions;
@@ -180,4 +188,49 @@ using (var scope = app.Services.CreateScope())
     dbContext.Database.EnsureCreated();
 }
 
-app.Run();
+// Start the application and display server information
+await app.StartAsync();
+
+// Get server addresses
+var serverAddressesFeature = app.Services.GetRequiredService<IServer>().Features.Get<IServerAddressesFeature>();
+var addresses = serverAddressesFeature?.Addresses;
+
+Console.WriteLine("\n========== SERVER INFORMATION ==========");
+Console.WriteLine($"Environment: {app.Environment.EnvironmentName}");
+Console.WriteLine($"Application Name: RealEstate API");
+Console.WriteLine($"Start Time: {DateTime.Now}");
+
+if (addresses != null && addresses.Any())
+{
+    Console.WriteLine("\nServer Endpoints:");
+    foreach (var address in addresses)
+    {
+        Console.WriteLine($"  - {address}");
+    }
+}
+
+// Display local IP addresses
+Console.WriteLine("\nLocal Network Interfaces:");
+var networkInterfaces = NetworkInterface.GetAllNetworkInterfaces()
+    .Where(i => i.OperationalStatus == OperationalStatus.Up && i.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+    .ToList();
+
+foreach (var nic in networkInterfaces)
+{
+    var ipProps = nic.GetIPProperties();
+    var ipAddresses = ipProps.UnicastAddresses
+        .Where(addr => addr.Address.AddressFamily == AddressFamily.InterNetwork)
+        .Select(addr => addr.Address.ToString())
+        .ToList();
+
+    if (ipAddresses.Any())
+    {
+        Console.WriteLine($"  - {nic.Name}: {string.Join(", ", ipAddresses)}");
+    }
+}
+
+Console.WriteLine("\nSwagger UI: http://localhost:5268/swagger");
+Console.WriteLine("\nPress Ctrl+C to shut down.");
+Console.WriteLine("=======================================\n");
+
+await app.WaitForShutdownAsync();

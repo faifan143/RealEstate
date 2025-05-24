@@ -49,3 +49,4 @@ D:\mcp\RealEstate\src\RealEstate.Infrastructure\obj\Debug\net9.0\refint\RealEsta
 D:\mcp\RealEstate\src\RealEstate.Infrastructure\obj\Debug\net9.0\RealEstate.Infrastructure.pdb
 D:\mcp\RealEstate\src\RealEstate.Infrastructure\obj\Debug\net9.0\RealEstate.Infrastructure.genruntimeconfig.cache
 D:\mcp\RealEstate\src\RealEstate.Infrastructure\obj\Debug\net9.0\ref\RealEstate.Infrastructure.dll
+D:\mcp\RealEstate\src\RealEstate.Infrastructure\obj\Debug\net9.0\RealEstate.Infrastructure.sourcelink.json
