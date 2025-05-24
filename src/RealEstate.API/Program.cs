@@ -114,6 +114,23 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+// Apply database migrations before starting the app
+using (var scope = app.Services.CreateScope())
+{
+    try
+    {
+        var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        Console.WriteLine("Running database migrations...");
+        dbContext.Database.Migrate();
+        Console.WriteLine("Database migrations completed successfully");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error during startup: {ex.Message}");
+        // Continue with application startup even if migrations fail
+    }
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

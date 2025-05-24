@@ -12,4 +12,8 @@ namespace RealEstate.API
             // Do nothing - let EF Core handle the schema
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c08f10dd1b5022883c1cefad6a4a458da117653d
