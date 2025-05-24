@@ -1,0 +1,17 @@
+/var/www/realestate/publish/RealEstate.Core.dll
+/var/www/realestate/publish/RealEstate.Core.deps.json
+/var/www/realestate/publish/RealEstate.Core.pdb
+/var/www/realestate/publish/Microsoft.AspNetCore.Cryptography.Internal.dll
+/var/www/realestate/publish/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/var/www/realestate/publish/Microsoft.AspNetCore.Http.Features.dll
+/var/www/realestate/publish/Microsoft.Extensions.Caching.Abstractions.dll
+/var/www/realestate/publish/Microsoft.Extensions.DependencyInjection.dll
+/var/www/realestate/publish/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/var/www/realestate/publish/Microsoft.Extensions.Identity.Core.dll
+/var/www/realestate/publish/Microsoft.Extensions.Identity.Stores.dll
+/var/www/realestate/publish/Microsoft.Extensions.Logging.dll
+/var/www/realestate/publish/Microsoft.Extensions.Logging.Abstractions.dll
+/var/www/realestate/publish/Microsoft.Extensions.Options.dll
+/var/www/realestate/publish/Microsoft.Extensions.Primitives.dll
+/var/www/realestate/publish/System.Diagnostics.DiagnosticSource.dll
+/var/www/realestate/publish/System.IO.Pipelines.dll
