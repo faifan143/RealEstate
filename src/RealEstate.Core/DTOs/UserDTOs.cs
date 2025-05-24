@@ -22,7 +22,6 @@ namespace RealEstate.Core.DTOs
         public string ProfilePictureUrl { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
-        public bool IsPhoneVerified { get; set; }
     }
 
     public class UserProfileUpdateDto

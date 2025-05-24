@@ -46,7 +46,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     options.User.RequireUniqueEmail = false;
     options.SignIn.RequireConfirmedAccount = false;
     options.SignIn.RequireConfirmedEmail = false;
-    options.SignIn.RequireConfirmedPhoneNumber = true;
+    options.SignIn.RequireConfirmedPhoneNumber = false;
 })
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
@@ -162,7 +162,6 @@ using (var scope = app.Services.CreateScope())
                 PhoneNumber = adminPhone,
                 FullName = "المدير",
                 Email = "admin@realestate.com",
-                IsPhoneVerified = true,
                 PhoneNumberConfirmed = true,
                 CreatedAt = DateTime.UtcNow
             };

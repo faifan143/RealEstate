@@ -44,8 +44,7 @@ namespace RealEstate.API.Controllers
                 FullName = registerDto.FullName,
                 Email = registerDto.Email,
                 CreatedAt = DateTime.UtcNow,
-                PhoneNumberConfirmed = false,
-                IsPhoneVerified = false
+                PhoneNumberConfirmed = true
             };
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);
@@ -56,43 +55,23 @@ namespace RealEstate.API.Controllers
                 return BadRequest(new { message = $"فشل في إنشاء الحساب: {errors}" });
             }
 
-            // Generate verification code
-            var verificationCode = GenerateVerificationCode();
-            user.PhoneVerificationCode = verificationCode;
-            user.PhoneVerificationExpiry = DateTime.UtcNow.AddMinutes(10);
-            await _userManager.UpdateAsync(user);
+            var token = await _tokenService.GenerateTokenAsync(user);
+            var refreshToken = await _tokenService.GenerateRefreshTokenAsync(user);
 
-            // TODO: Send SMS verification code
-            // await _smsService.SendVerificationCode(user.PhoneNumber, verificationCode);
-
-            return Ok(new { 
-                message = "تم إنشاء الحساب بنجاح. يرجى التحقق من رقم الهاتف",
-                userId = user.Id,
-                verificationCode = verificationCode // Remove this in production
+            return Ok(new AuthResponseDto
+            {
+                Token = token,
+                RefreshToken = refreshToken,
+                Expiration = DateTime.UtcNow.AddHours(1),
+                User = new UserDto
+                {
+                    Id = user.Id,
+                    FullName = user.FullName,
+                    PhoneNumber = user.PhoneNumber ?? string.Empty,
+                    Email = user.Email ?? string.Empty,
+                    ProfilePictureUrl = user.ProfilePictureUrl ?? string.Empty
+                }
             });
-        }
-
-        [HttpPost("verify-phone")]
-        public async Task<ActionResult> VerifyPhone(PhoneVerificationDto verificationDto)
-        {
-            var user = await _userManager.FindByNameAsync(verificationDto.PhoneNumber);
-            if (user == null)
-                return BadRequest(new { message = "المستخدم غير موجود" });
-
-            if (user.PhoneVerificationCode != verificationDto.VerificationCode)
-                return BadRequest(new { message = "رمز التحقق غير صحيح" });
-
-            if (user.PhoneVerificationExpiry < DateTime.UtcNow)
-                return BadRequest(new { message = "رمز التحقق منتهي الصلاحية" });
-
-            user.IsPhoneVerified = true;
-            user.PhoneNumberConfirmed = true;
-            user.PhoneVerificationCode = null;
-            user.PhoneVerificationExpiry = null;
-
-            await _userManager.UpdateAsync(user);
-
-            return Ok(new { message = "تم التحقق من رقم الهاتف بنجاح" });
         }
 
         [HttpPost("login")]
@@ -101,9 +80,6 @@ namespace RealEstate.API.Controllers
             var user = await _userManager.FindByNameAsync(loginDto.PhoneNumber);
             if (user == null)
                 return BadRequest(new { message = "رقم الهاتف أو كلمة المرور غير صحيحة" });
-
-            if (!user.IsPhoneVerified)
-                return BadRequest(new { message = "يجب التحقق من رقم الهاتف أولاً" });
 
             var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
             if (!result.Succeeded)
@@ -128,27 +104,6 @@ namespace RealEstate.API.Controllers
             });
         }
 
-        [HttpPost("send-verification-code")]
-        public async Task<ActionResult> SendVerificationCode(SendVerificationCodeDto codeDto)
-        {
-            var user = await _userManager.FindByNameAsync(codeDto.PhoneNumber);
-            if (user == null)
-                return BadRequest(new { message = "المستخدم غير موجود" });
-
-            var verificationCode = GenerateVerificationCode();
-            user.PhoneVerificationCode = verificationCode;
-            user.PhoneVerificationExpiry = DateTime.UtcNow.AddMinutes(10);
-            await _userManager.UpdateAsync(user);
-
-            // TODO: Send SMS verification code
-            // await _smsService.SendVerificationCode(user.PhoneNumber, verificationCode);
-
-            return Ok(new { 
-                message = "تم إرسال رمز التحقق",
-                verificationCode = verificationCode // Remove this in production
-            });
-        }
-
         [HttpPost("forgot-password")]
         public async Task<ActionResult> ForgotPassword(ForgotPasswordDto forgotPasswordDto)
         {
@@ -156,17 +111,14 @@ namespace RealEstate.API.Controllers
             if (user == null)
                 return BadRequest(new { message = "المستخدم غير موجود" });
 
-            var verificationCode = GenerateVerificationCode();
-            user.PhoneVerificationCode = verificationCode;
-            user.PhoneVerificationExpiry = DateTime.UtcNow.AddMinutes(10);
-            await _userManager.UpdateAsync(user);
+            // Generate password reset token
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
 
-            // TODO: Send SMS verification code
-            // await _smsService.SendVerificationCode(user.PhoneNumber, verificationCode);
-
+            // In a real application, you would send this token to the user via SMS
+            // For development, we'll return it directly
             return Ok(new { 
-                message = "تم إرسال رمز التحقق لإعادة تعيين كلمة المرور",
-                verificationCode = verificationCode // Remove this in production
+                message = "تم إرسال رمز إعادة تعيين كلمة المرور",
+                resetToken = token // Remove this in production
             });
         }
 
@@ -177,24 +129,13 @@ namespace RealEstate.API.Controllers
             if (user == null)
                 return BadRequest(new { message = "المستخدم غير موجود" });
 
-            if (user.PhoneVerificationCode != resetPasswordDto.VerificationCode)
-                return BadRequest(new { message = "رمز التحقق غير صحيح" });
-
-            if (user.PhoneVerificationExpiry < DateTime.UtcNow)
-                return BadRequest(new { message = "رمز التحقق منتهي الصلاحية" });
-
-            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var result = await _userManager.ResetPasswordAsync(user, token, resetPasswordDto.NewPassword);
+            var result = await _userManager.ResetPasswordAsync(user, resetPasswordDto.ResetToken, resetPasswordDto.NewPassword);
 
             if (!result.Succeeded)
             {
                 var errors = string.Join(", ", result.Errors.Select(e => e.Description));
                 return BadRequest(new { message = $"فشل في إعادة تعيين كلمة المرور: {errors}" });
             }
-
-            user.PhoneVerificationCode = null;
-            user.PhoneVerificationExpiry = null;
-            await _userManager.UpdateAsync(user);
 
             return Ok(new { message = "تم إعادة تعيين كلمة المرور بنجاح" });
         }
@@ -246,12 +187,6 @@ namespace RealEstate.API.Controllers
             }
 
             return Ok(new { message = "تم تسجيل الخروج بنجاح" });
-        }
-
-        private string GenerateVerificationCode()
-        {
-            var random = new Random();
-            return random.Next(100000, 999999).ToString();
         }
     }
 }

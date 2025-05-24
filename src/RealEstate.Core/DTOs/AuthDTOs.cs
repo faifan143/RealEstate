@@ -43,24 +43,6 @@ namespace RealEstate.Core.DTOs
         public string? Email { get; set; }
     }
 
-    public class PhoneVerificationDto
-    {
-        [Required]
-        [Phone]
-        public string PhoneNumber { get; set; } = string.Empty;
-
-        [Required]
-        [StringLength(6, MinimumLength = 6)]
-        public string VerificationCode { get; set; } = string.Empty;
-    }
-
-    public class SendVerificationCodeDto
-    {
-        [Required]
-        [Phone]
-        public string PhoneNumber { get; set; } = string.Empty;
-    }
-
     public class AuthResponseDto
     {
         public string Token { get; set; } = string.Empty;
@@ -109,8 +91,7 @@ namespace RealEstate.Core.DTOs
         public string PhoneNumber { get; set; } = string.Empty;
 
         [Required]
-        [StringLength(6, MinimumLength = 6)]
-        public string VerificationCode { get; set; } = string.Empty;
+        public string ResetToken { get; set; } = string.Empty;
 
         [Required]
         [StringLength(100, MinimumLength = 8)]

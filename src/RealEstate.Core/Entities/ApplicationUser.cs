@@ -11,11 +11,6 @@ namespace RealEstate.Core.Entities
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
         
-        // Phone number verification
-        public bool IsPhoneVerified { get; set; } = false;
-        public string? PhoneVerificationCode { get; set; }
-        public DateTime? PhoneVerificationExpiry { get; set; }
-
         // Navigation properties
         public virtual ICollection<Property> Properties { get; set; }
         public virtual ICollection<Booking> Bookings { get; set; }
