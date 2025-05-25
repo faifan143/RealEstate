@@ -52,6 +52,7 @@ docker ps --filter "name=realestate"
 - **API**: Runs on port 5269 (mapped to container port 8080)
 - **PostgreSQL**: Runs on port 5432
 - **Nginx**: Configured to proxy to port 5269 on port 4545
+- **.NET Runtime**: Uses .NET 8.0 (matches project target framework)
 
 ## Health Checks
 
