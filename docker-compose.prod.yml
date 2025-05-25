@@ -26,7 +26,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: src/RealEstate.API/Dockerfile
+      dockerfile: src/RealEstate.API/Dockerfile.prod
     container_name: realestate-api
     ports:
       - "5269:8080"  # Updated to match your nginx config

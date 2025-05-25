@@ -29,17 +29,17 @@ chmod +x docker-deploy.sh
 
 ### Build and start services
 ```bash
-docker compose -f docker-compose.prod.yml up -d --build
+docker-compose -f docker-compose.prod.yml up -d --build
 ```
 
 ### View logs
 ```bash
-docker compose -f docker-compose.prod.yml logs -f
+docker-compose -f docker-compose.prod.yml logs -f
 ```
 
 ### Stop services
 ```bash
-docker compose -f docker-compose.prod.yml down
+docker-compose -f docker-compose.prod.yml down
 ```
 
 ### Check container status

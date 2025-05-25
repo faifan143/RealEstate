@@ -31,16 +31,16 @@ deploy() {
     echo "🔧 Building and deploying containers..."
     
     # Pull latest images for base images
-    docker compose -f $COMPOSE_FILE pull postgres
+    docker-compose -f $COMPOSE_FILE pull postgres
     
     # Build the application
-    docker compose -f $COMPOSE_FILE build --no-cache api
+    docker-compose -f $COMPOSE_FILE build --no-cache api
     
     # Stop existing containers
-    docker compose -f $COMPOSE_FILE down
+    docker-compose -f $COMPOSE_FILE down
     
     # Start new containers
-    docker compose -f $COMPOSE_FILE up -d
+    docker-compose -f $COMPOSE_FILE up -d
     
     echo "⏳ Waiting for services to start..."
     sleep 10
@@ -81,13 +81,13 @@ check_health() {
 # Function to show logs
 show_logs() {
     echo "📋 Recent logs:"
-    docker compose -f $COMPOSE_FILE logs --tail 50
+    docker-compose -f $COMPOSE_FILE logs --tail 50
 }
 
 # Function to show status
 show_status() {
     echo "📊 Current status:"
-    docker compose -f $COMPOSE_FILE ps
+    docker-compose -f $COMPOSE_FILE ps
     echo ""
     echo "🔗 Container details:"
     docker ps --filter "name=realestate"
@@ -124,16 +124,16 @@ main() {
             ;;
         "restart")
             echo "🔄 Restarting services..."
-            docker compose -f $COMPOSE_FILE restart
+            docker-compose -f $COMPOSE_FILE restart
             check_health
             ;;
         "stop")
             echo "🛑 Stopping services..."
-            docker compose -f $COMPOSE_FILE down
+            docker-compose -f $COMPOSE_FILE down
             ;;
         "start")
             echo "▶️  Starting services..."
-            docker compose -f $COMPOSE_FILE up -d
+            docker-compose -f $COMPOSE_FILE up -d
             check_health
             ;;
         *)
