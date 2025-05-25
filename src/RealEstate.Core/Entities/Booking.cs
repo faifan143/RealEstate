@@ -9,14 +9,27 @@ namespace RealEstate.Core.Entities
         public Guid PropertyId { get; set; }
         public required string UserId { get; set; }
         public BookingStatus Status { get; set; } = BookingStatus.Pending;
-        public DateTime RequestDate { get; set; }
+        
+        private DateTime _requestDate;
+        public DateTime RequestDate 
+        { 
+            get => _requestDate;
+            set => _requestDate = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
+        
         public required string Message { get; set; }
         public required string ContactPhone { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
         
         // Direct booking without queue system
-        public DateTime? VisitDateTime { get; set; }
+        private DateTime? _visitDateTime;
+        public DateTime? VisitDateTime 
+        { 
+            get => _visitDateTime;
+            set => _visitDateTime = value.HasValue ? DateTime.SpecifyKind(value.Value, DateTimeKind.Utc) : null;
+        }
+        
         public bool IsDirectBooking { get; set; } = true;
 
         // Navigation properties

@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using RealEstate.Core.Enums;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Http;
 
 namespace RealEstate.Core.DTOs
 {
@@ -23,6 +25,8 @@ namespace RealEstate.Core.DTOs
         public DateTime CreatedAt { get; set; }
         public int? RentalDurationMonths { get; set; }
         public DateTime? RentalEndDate { get; set; }
+        
+        // Calculated properties to help with frontend display
         public bool IsForRent { get; set; }
         public bool IsForSale { get; set; }
     }
@@ -141,5 +145,56 @@ namespace RealEstate.Core.DTOs
         public int CurrentPage { get; set; }
         public int PageSize { get; set; }
         public IEnumerable<T> Items { get; set; } = new List<T>();
+    }
+
+    public class PropertyCreateFormDto
+    {
+        // Option to provide property data as JSON string
+        public string? PropertyData { get; set; }
+        
+        // Main property fields for direct form submission
+        [Required]
+        public string Title { get; set; } = string.Empty;
+        
+        [Required]
+        public string Description { get; set; } = string.Empty;
+        
+        [Required]
+        public decimal Price { get; set; }
+        
+        [Required]
+        public decimal Area { get; set; }
+        
+        [Required]
+        public int Bedrooms { get; set; }
+        
+        [Required]
+        public int Bathrooms { get; set; }
+        
+        [Required]
+        public PropertyType PropertyType { get; set; }
+        
+        [Required]
+        public string Location { get; set; } = string.Empty;
+        
+        [Required]
+        public string Address { get; set; } = string.Empty;
+        
+        [Required]
+        public double Latitude { get; set; }
+        
+        [Required]
+        public double Longitude { get; set; }
+        
+        public bool IsAvailable { get; set; } = true;
+        public int? RentalDurationMonths { get; set; }
+        public DateTime? RentalEndDate { get; set; }
+        public bool IsForRent { get; set; }
+        public bool IsForSale { get; set; }
+        public string? Features { get; set; }  // Comma-separated features
+        
+        // Image uploads
+        public IFormFile? MainImage { get; set; }
+        public List<IFormFile>? AdditionalImages { get; set; }
     }
 }

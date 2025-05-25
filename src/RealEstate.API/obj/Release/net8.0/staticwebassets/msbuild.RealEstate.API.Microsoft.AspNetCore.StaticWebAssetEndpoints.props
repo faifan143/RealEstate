@@ -1,0 +1,184 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_1_20250524074901.g8yw7hjh48.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_1_20250524074901.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"g8yw7hjh48"},{"Name":"integrity","Value":"sha256-UDDEcGNDls0TA8LFHTOJCowfG8\u002B\u002BmWRHEeGi40KaasI="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/additional_image_1_20250524074901.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"18345"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022UDDEcGNDls0TA8LFHTOJCowfG8\u002B\u002BmWRHEeGi40KaasI=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:49:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_1_20250524074901.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_1_20250524074901.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-UDDEcGNDls0TA8LFHTOJCowfG8\u002B\u002BmWRHEeGi40KaasI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"18345"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022UDDEcGNDls0TA8LFHTOJCowfG8\u002B\u002BmWRHEeGi40KaasI=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:49:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_1_20250524075111.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_1_20250524075111.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-js3G1h0Yx9Bc9a4m9WECkbzxf5pIl9E\u002B//qN/rFotY0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"71705"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022js3G1h0Yx9Bc9a4m9WECkbzxf5pIl9E\u002B//qN/rFotY0=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:51:11 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_1_20250524075111.ug34r6xk2k.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_1_20250524075111.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ug34r6xk2k"},{"Name":"integrity","Value":"sha256-js3G1h0Yx9Bc9a4m9WECkbzxf5pIl9E\u002B//qN/rFotY0="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/additional_image_1_20250524075111.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"71705"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022js3G1h0Yx9Bc9a4m9WECkbzxf5pIl9E\u002B//qN/rFotY0=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:51:11 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_1_20250524083718.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_1_20250524083718.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-kTHyZe0qfdu9zPYT9nDOSh2AZDgYnoWqtcCDASS6rz0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"100883"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022kTHyZe0qfdu9zPYT9nDOSh2AZDgYnoWqtcCDASS6rz0=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 08:37:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_1_20250524083718.n2hsd76yra.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_1_20250524083718.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"n2hsd76yra"},{"Name":"integrity","Value":"sha256-kTHyZe0qfdu9zPYT9nDOSh2AZDgYnoWqtcCDASS6rz0="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/additional_image_1_20250524083718.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"100883"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022kTHyZe0qfdu9zPYT9nDOSh2AZDgYnoWqtcCDASS6rz0=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 08:37:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_2_20250524075111.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_2_20250524075111.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-XHPsP3LcliVUqKbgT5Uu9VQKvHi0N3fbbmvyBSnbzqQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"24016"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022XHPsP3LcliVUqKbgT5Uu9VQKvHi0N3fbbmvyBSnbzqQ=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:51:11 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_2_20250524075111.sshxjun4bk.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_2_20250524075111.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"sshxjun4bk"},{"Name":"integrity","Value":"sha256-XHPsP3LcliVUqKbgT5Uu9VQKvHi0N3fbbmvyBSnbzqQ="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/additional_image_2_20250524075111.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"24016"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022XHPsP3LcliVUqKbgT5Uu9VQKvHi0N3fbbmvyBSnbzqQ=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:51:11 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_2_20250524083718.dwsn4wyt6m.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_2_20250524083718.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"dwsn4wyt6m"},{"Name":"integrity","Value":"sha256-DVanjrY9pmQXvLfhYcebAaaLcsB9J2eUeeFyPRTV6g0="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/additional_image_2_20250524083718.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"27688"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DVanjrY9pmQXvLfhYcebAaaLcsB9J2eUeeFyPRTV6g0=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 08:37:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_2_20250524083718.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_2_20250524083718.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DVanjrY9pmQXvLfhYcebAaaLcsB9J2eUeeFyPRTV6g0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"27688"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DVanjrY9pmQXvLfhYcebAaaLcsB9J2eUeeFyPRTV6g0=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 08:37:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_3_20250524083718.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_3_20250524083718.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-e/6m9YJceFhNaaWxx3woYcB9f7vBYb1iNRvfKVmP36s="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"124655"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022e/6m9YJceFhNaaWxx3woYcB9f7vBYb1iNRvfKVmP36s=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 08:37:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_3_20250524083718.nxgrkfgdhm.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_3_20250524083718.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"nxgrkfgdhm"},{"Name":"integrity","Value":"sha256-e/6m9YJceFhNaaWxx3woYcB9f7vBYb1iNRvfKVmP36s="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/additional_image_3_20250524083718.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"124655"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022e/6m9YJceFhNaaWxx3woYcB9f7vBYb1iNRvfKVmP36s=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 08:37:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_4_20250524083718.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_4_20250524083718.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-GMyYadPHXnaBEsLKGKpjIcf31PH4jw9xDgIjP2SK/Jo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"37470"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022GMyYadPHXnaBEsLKGKpjIcf31PH4jw9xDgIjP2SK/Jo=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 08:37:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_4_20250524083718.sza9kw0e0l.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_4_20250524083718.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"sza9kw0e0l"},{"Name":"integrity","Value":"sha256-GMyYadPHXnaBEsLKGKpjIcf31PH4jw9xDgIjP2SK/Jo="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/additional_image_4_20250524083718.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"37470"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022GMyYadPHXnaBEsLKGKpjIcf31PH4jw9xDgIjP2SK/Jo=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 08:37:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_5_20250524083718.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_5_20250524083718.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-vQ3JIyWj7oTFsEB2x4MZiklsbR5MvehT2qP3DGiA58s="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"5859"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022vQ3JIyWj7oTFsEB2x4MZiklsbR5MvehT2qP3DGiA58s=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 08:37:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/additional_image_5_20250524083718.nbmds5j593.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\additional_image_5_20250524083718.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"nbmds5j593"},{"Name":"integrity","Value":"sha256-vQ3JIyWj7oTFsEB2x4MZiklsbR5MvehT2qP3DGiA58s="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/additional_image_5_20250524083718.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5859"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022vQ3JIyWj7oTFsEB2x4MZiklsbR5MvehT2qP3DGiA58s=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 08:37:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524074431.fq8bk4m11x.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524074431.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fq8bk4m11x"},{"Name":"integrity","Value":"sha256-98TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/main_image_20250524074431.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"29945"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002298TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:44:31 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524074431.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524074431.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-98TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"29945"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002298TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:44:31 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524074613.fq8bk4m11x.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524074613.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fq8bk4m11x"},{"Name":"integrity","Value":"sha256-98TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/main_image_20250524074613.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"29945"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002298TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:46:13 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524074613.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524074613.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-98TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"29945"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002298TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:46:13 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524074836.fq8bk4m11x.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524074836.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fq8bk4m11x"},{"Name":"integrity","Value":"sha256-98TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/main_image_20250524074836.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"29945"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002298TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:48:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524074836.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524074836.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-98TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"29945"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002298TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:48:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524074901.fq8bk4m11x.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524074901.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fq8bk4m11x"},{"Name":"integrity","Value":"sha256-98TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/main_image_20250524074901.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"29945"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002298TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:49:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524074901.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524074901.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-98TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"29945"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002298TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:49:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524075111.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524075111.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-GMyYadPHXnaBEsLKGKpjIcf31PH4jw9xDgIjP2SK/Jo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"37470"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022GMyYadPHXnaBEsLKGKpjIcf31PH4jw9xDgIjP2SK/Jo=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:51:11 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524075111.sza9kw0e0l.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524075111.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"sza9kw0e0l"},{"Name":"integrity","Value":"sha256-GMyYadPHXnaBEsLKGKpjIcf31PH4jw9xDgIjP2SK/Jo="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/main_image_20250524075111.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"37470"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022GMyYadPHXnaBEsLKGKpjIcf31PH4jw9xDgIjP2SK/Jo=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:51:11 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524083718.e1k86sianj.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524083718.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"e1k86sianj"},{"Name":"integrity","Value":"sha256-cm1a7QfVYagp6/mpQCCjJiShCknIr59X0TAVwvfJvBs="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/main_image_20250524083718.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"80410"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022cm1a7QfVYagp6/mpQCCjJiShCknIr59X0TAVwvfJvBs=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 08:37:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524083718.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524083718.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-cm1a7QfVYagp6/mpQCCjJiShCknIr59X0TAVwvfJvBs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"80410"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022cm1a7QfVYagp6/mpQCCjJiShCknIr59X0TAVwvfJvBs=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 08:37:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524104118.fq8bk4m11x.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524104118.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fq8bk4m11x"},{"Name":"integrity","Value":"sha256-98TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4="},{"Name":"label","Value":"_content/RealEstate.API/images/properties/main_image_20250524104118.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"29945"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002298TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:41:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RealEstate.API/images/properties/main_image_20250524104118.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\properties\main_image_20250524104118.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-98TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"29945"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002298TBJpf9h24Js5mCTG8WodZUG6e7aQ1SE8mEqL0KXA4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 24 May 2025 07:41:18 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

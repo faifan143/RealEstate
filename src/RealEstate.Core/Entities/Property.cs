@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using RealEstate.Core.Enums;
 
 namespace RealEstate.Core.Entities

@@ -13,45 +13,32 @@ namespace MigrateDb
             using var connection = new NpgsqlConnection(connectionString);
             await connection.OpenAsync();
             
-            Console.WriteLine("Checking and adding missing columns to AspNetUsers table...");
+            Console.WriteLine("Checking and adding missing columns to Properties table...");
             
-            // Check if IsPhoneVerified column exists
-            if (!await ColumnExists(connection, "AspNetUsers", "IsPhoneVerified"))
+            // Check if IsForRent column exists
+            if (!await ColumnExists(connection, "Properties", "IsForRent"))
             {
-                Console.WriteLine("Adding IsPhoneVerified column...");
+                Console.WriteLine("Adding IsForRent column...");
                 await ExecuteNonQuery(connection, 
-                    "ALTER TABLE \"AspNetUsers\" ADD COLUMN \"IsPhoneVerified\" boolean NOT NULL DEFAULT false;");
-                Console.WriteLine("IsPhoneVerified column added successfully.");
+                    "ALTER TABLE \"Properties\" ADD COLUMN \"IsForRent\" boolean NOT NULL DEFAULT false;");
+                Console.WriteLine("IsForRent column added successfully.");
             }
             else
             {
-                Console.WriteLine("IsPhoneVerified column already exists.");
+                Console.WriteLine("IsForRent column already exists.");
             }
             
-            // Check if PhoneVerificationCode column exists
-            if (!await ColumnExists(connection, "AspNetUsers", "PhoneVerificationCode"))
+            // Check if IsForSale column exists
+            if (!await ColumnExists(connection, "Properties", "IsForSale"))
             {
-                Console.WriteLine("Adding PhoneVerificationCode column...");
+                Console.WriteLine("Adding IsForSale column...");
                 await ExecuteNonQuery(connection, 
-                    "ALTER TABLE \"AspNetUsers\" ADD COLUMN \"PhoneVerificationCode\" text;");
-                Console.WriteLine("PhoneVerificationCode column added successfully.");
+                    "ALTER TABLE \"Properties\" ADD COLUMN \"IsForSale\" boolean NOT NULL DEFAULT true;");
+                Console.WriteLine("IsForSale column added successfully.");
             }
             else
             {
-                Console.WriteLine("PhoneVerificationCode column already exists.");
-            }
-            
-            // Check if PhoneVerificationExpiry column exists
-            if (!await ColumnExists(connection, "AspNetUsers", "PhoneVerificationExpiry"))
-            {
-                Console.WriteLine("Adding PhoneVerificationExpiry column...");
-                await ExecuteNonQuery(connection, 
-                    "ALTER TABLE \"AspNetUsers\" ADD COLUMN \"PhoneVerificationExpiry\" timestamp with time zone;");
-                Console.WriteLine("PhoneVerificationExpiry column added successfully.");
-            }
-            else
-            {
-                Console.WriteLine("PhoneVerificationExpiry column already exists.");
+                Console.WriteLine("IsForSale column already exists.");
             }
             
             Console.WriteLine("All necessary columns have been checked and added if needed.");
