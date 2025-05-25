@@ -1,0 +1,30 @@
+// Quick fix patch for Program.cs - Add these changes
+
+// CHANGE 1: Enable Swagger in Production (around line 102)
+// Replace this block:
+/*
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RealEstate API v1"));
+}
+*/
+
+// With this:
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+
+// Enable Swagger in all environments for debugging
+app.UseSwagger();
+app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RealEstate API v1"));
+
+// CHANGE 2: Add health check endpoint (add after line 107)
+app.MapGet("/health", () => "Healthy").WithName("HealthCheck");
+
+// CHANGE 3: Add a simple root endpoint (add after the health check)
+app.MapGet("/", () => "RealEstate API is running").WithName("Root");
+
+// The rest of the Program.cs stays the same...
