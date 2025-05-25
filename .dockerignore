@@ -1,30 +1,27 @@
-# Git
+# Add to .dockerignore
 .git
 .gitignore
-.gitattributes
-
-# Docker
+README.md
 Dockerfile
 docker-compose.yml
+docker-compose.prod.yml
 .dockerignore
-
-# Build and temporary files
-**/bin/
-**/obj/
-**/out/
-**/TestResults/
-**/.vs/
-**/.vscode/
-**/.idea/
-**/node_modules/
-**/wwwroot/lib/
-
-# Others
-LICENSE
-README.md
-*.md
-*.yml
-*.ps1
-*.cmd
-*.sh
-!init-db.sh 
+.vs/
+.vscode/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+.nuget/
+packages/
+logs/
+*.log
+.env
+.env.local
+.env.production
+node_modules/
+npm-debug.log*
+.DS_Store
+Thumbs.db
+publish/
