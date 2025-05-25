@@ -1,31 +1,67 @@
 #!/bin/bash
 set -e
 
-# Make sure Docker and Docker Compose are installed
-command -v docker >/dev/null 2>&1 || { echo "Docker is required but not installed. Aborting." >&2; exit 1; }
-command -v docker-compose >/dev/null 2>&1 || { echo "Docker Compose is required but not installed. Aborting." >&2; exit 1; }
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
 
-echo "Starting RealEstate API deployment..."
+echo -e "${GREEN}Starting RealEstate API deployment...${NC}"
+
+# Make sure Docker and Docker Compose are installed
+command -v docker >/dev/null 2>&1 || { echo -e "${RED}Docker is required but not installed. Aborting.${NC}" >&2; exit 1; }
+command -v docker-compose >/dev/null 2>&1 || { echo -e "${RED}Docker Compose is required but not installed. Aborting.${NC}" >&2; exit 1; }
+
+# Stop existing containers if they exist
+echo -e "${YELLOW}Stopping existing containers...${NC}"
+docker-compose down || true
 
 # Build and start the containers in detached mode
+echo -e "${YELLOW}Building and starting containers...${NC}"
 docker-compose up -d --build
 
-echo "Waiting for services to start..."
-sleep 10
+# Wait for PostgreSQL to be ready
+echo -e "${YELLOW}Waiting for PostgreSQL to be ready...${NC}"
+timeout=60
+elapsed=0
+while [ $elapsed -lt $timeout ]; do
+    if docker-compose exec -T postgres pg_isready -U postgres >/dev/null 2>&1; then
+        echo -e "${GREEN}PostgreSQL is ready!${NC}"
+        break
+    fi
+    echo "Waiting for PostgreSQL... ($elapsed/${timeout}s)"
+    sleep 5
+    elapsed=$((elapsed + 5))
+done
+
+if [ $elapsed -ge $timeout ]; then
+    echo -e "${RED}PostgreSQL failed to start within ${timeout} seconds${NC}"
+    docker-compose logs postgres
+    exit 1
+fi
+
+# Wait a bit more for API to fully start
+echo -e "${YELLOW}Waiting for API to start...${NC}"
+sleep 15
 
 # Check container status
-echo "Container status:"
+echo -e "${YELLOW}Container status:${NC}"
 docker-compose ps
 
-# Show logs from API container to verify it's running correctly
-echo "API container logs:"
-docker-compose logs api --tail 50
+# Show logs from containers
+echo -e "${YELLOW}API container logs:${NC}"
+docker-compose logs --tail=50 api
 
-echo "PostgreSQL container logs:"
-docker-compose logs postgres --tail 20
+echo -e "${YELLOW}PostgreSQL container logs:${NC}"
+docker-compose logs --tail=20 postgres
 
-echo "========================================"
-echo "Deployment completed successfully!"
-echo "The API is available at: http://$(hostname -I | awk '{print $1}'):5268"
-echo "Swagger UI: http://$(hostname -I | awk '{print $1}'):5268/swagger"
-echo "========================================" 
+# Get the actual IP address
+HOST_IP=$(hostname -I | awk '{print $1}')
+
+echo -e "${GREEN}========================================${NC}"
+echo -e "${GREEN}Deployment completed successfully!${NC}"
+echo -e "${GREEN}The API is available at: http://${HOST_IP}:5269${NC}"
+echo -e "${GREEN}Swagger UI: http://${HOST_IP}:5269/swagger${NC}"
+echo -e "${GREEN}Database is available at: ${HOST_IP}:5432${NC}"
+echo -e "${GREEN}========================================${NC}"
