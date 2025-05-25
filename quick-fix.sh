@@ -32,7 +32,7 @@ echo ""
 echo "🏥 Checking API health..."
 sleep 10
 
-if curl -f http://localhost:5269/health 2>/dev/null; then
+if curl -f http://localhost:7269/health 2>/dev/null; then
     echo "✅ API is healthy!"
 else
     echo "⚠️  API health check failed. Checking logs..."
@@ -45,7 +45,7 @@ fi
 
 echo ""
 echo "🎉 Deployment completed!"
-echo "🌐 API should be available at: http://62.171.153.198:4545"
+echo "🌐 API should be available at: http://62.171.153.198:7269"
 
 # Show final status
 echo ""

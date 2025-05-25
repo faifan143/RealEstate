@@ -6,18 +6,18 @@ services:
     image: postgres:15
     container_name: realestate-postgres
     environment:
-      POSTGRES_DB: RealEstateDb
-      POSTGRES_USER: postgres
+      POSTGRES_DB: realestate
+      POSTGRES_USER: realestateuser
       POSTGRES_PASSWORD: 123
     ports:
-      - "5432:5432"
+      - "7432:5432"  # Using uncommon external port
     volumes:
       - postgres-data:/var/lib/postgresql/data
     restart: unless-stopped
     networks:
       - realestate-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U realestateuser -d realestate"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -29,11 +29,11 @@ services:
       dockerfile: src/RealEstate.API/Dockerfile.prod
     container_name: realestate-api
     ports:
-      - "5269:8080"  # Updated to match your nginx config
+      - "7269:5268"  # Map to app's natural port inside container
     environment:
-      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=RealEstateDb;Username=postgres;Password=123
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=realestate;Username=realestateuser;Password=123
       - ASPNETCORE_ENVIRONMENT=Production
-      - ASPNETCORE_URLS=http://+:8080
+      - ASPNETCORE_URLS=http://+:5268
     depends_on:
       postgres:
         condition: service_healthy
@@ -43,7 +43,7 @@ services:
     volumes:
       - ./wwwroot:/app/wwwroot  # For static files access
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8080/health || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:5268/health || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3

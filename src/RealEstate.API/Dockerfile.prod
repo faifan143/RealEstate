@@ -28,8 +28,8 @@ COPY --from=publish /app/publish .
 RUN mkdir -p wwwroot/images
 
 # Set environment variables
-ENV ASPNETCORE_URLS=http://+:8080
+ENV ASPNETCORE_URLS=http://+:5268
 ENV ASPNETCORE_ENVIRONMENT=Production
 
-EXPOSE 8080
+EXPOSE 5268
 ENTRYPOINT ["dotnet", "RealEstate.API.dll"]
