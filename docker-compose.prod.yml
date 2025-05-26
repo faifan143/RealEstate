@@ -1,4 +1,26 @@
+version: '3.8'
+
 services:
+  postgres:
+    image: postgres:15
+    container_name: realestate-postgres
+    environment:
+      POSTGRES_DB: realestate
+      POSTGRES_USER: realestateuser
+      POSTGRES_PASSWORD: 123
+    ports:
+      - "7432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - realestate-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U realestateuser -d realestate"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   api:
     build:
       context: .
@@ -18,21 +40,18 @@ services:
       - realestate-network
     volumes:
       - realestate-images:/app/wwwroot/images
-      - realestate-dataprotection:/root/.aspnet/DataProtection-Keys # Added for data protection keys
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:5268/health || exit 1"]
       interval: 30s
       timeout: 10s
-      retries: 5 # Increased for robustness
-      start_period: 60s # Increased to allow more startup time
+      retries: 5
+      start_period: 60s
 
 volumes:
   postgres-data:
     name: realestate-postgres-data
   realestate-images:
     name: realestate-images
-  realestate-dataprotection: # Added volume
-    name: realestate-dataprotection
 
 networks:
   realestate-network:
