@@ -142,7 +142,16 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // Configure static file serving for uploaded images
-app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx =>
+    {
+        // Enable CORS for images
+        ctx.Context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+        ctx.Context.Response.Headers.Add("Access-Control-Allow-Methods", "GET");
+        ctx.Context.Response.Headers.Add("Cache-Control", "public,max-age=2592000"); // 30 days
+    }
+});
 
 // Execute SQL to add missing columns
 DatabaseUpdater.AddMissingColumns(builder.Configuration.GetConnectionString("DefaultConnection") ?? 

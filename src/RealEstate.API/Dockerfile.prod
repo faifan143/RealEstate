@@ -24,8 +24,10 @@ RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 COPY --from=publish /app/publish .
 
-# Create wwwroot directory for static files
-RUN mkdir -p wwwroot/images
+# Create wwwroot directory structure with proper permissions
+RUN mkdir -p wwwroot/images/properties && \
+    chmod -R 755 wwwroot && \
+    chown -R www-data:www-data wwwroot
 
 # Set environment variables
 ENV ASPNETCORE_URLS=http://+:5268

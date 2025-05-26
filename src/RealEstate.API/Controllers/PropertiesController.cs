@@ -586,33 +586,75 @@ namespace RealEstate.API.Controllers
         {
             try
             {
+                // Use forward slashes for cross-platform compatibility
                 var folderName = Path.Combine("wwwroot", "images", "properties");
                 var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
                 
+                // Ensure directory exists with proper permissions
                 if (!Directory.Exists(pathToSave))
                 {
                     Directory.CreateDirectory(pathToSave);
+                    
+                    // Set permissions for Linux containers
+                    if (Environment.OSVersion.Platform == PlatformID.Unix)
+                    {
+                        try
+                        {
+                            var directoryInfo = new DirectoryInfo(pathToSave);
+                            directoryInfo.Attributes &= ~FileAttributes.ReadOnly;
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Warning: Could not set directory permissions: {ex.Message}");
+                        }
+                    }
                 }
 
-                // Create a unique filename
-                string fileName = ContentDispositionHeaderValue.Parse(image.ContentDisposition).FileName.Trim('"');
-                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
-                string extension = Path.GetExtension(fileName);
-                string uniqueFileName = $"{fileNameWithoutExtension}_{DateTime.UtcNow.ToString("yyyyMMddHHmmss")}{extension}";
+                // Create a unique filename with sanitization
+                string originalFileName = ContentDispositionHeaderValue.Parse(image.ContentDisposition).FileName?.Trim('"') ?? "image";
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(originalFileName);
+                string extension = Path.GetExtension(originalFileName);
                 
+                // Sanitize filename for cross-platform compatibility
+                fileNameWithoutExtension = System.Text.RegularExpressions.Regex.Replace(fileNameWithoutExtension, @"[^a-zA-Z0-9_-]", "_");
+                
+                string uniqueFileName = $"{fileNameWithoutExtension}_{DateTime.UtcNow:yyyyMMddHHmmss}{extension}";
                 string fullPath = Path.Combine(pathToSave, uniqueFileName);
                 
-                using (var stream = new FileStream(fullPath, FileMode.Create))
+                // Copy file with proper error handling
+                using (var stream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
                 {
                     await image.CopyToAsync(stream);
+                    await stream.FlushAsync();
+                }
+                
+                // Verify file was created
+                if (!File.Exists(fullPath))
+                {
+                    throw new InvalidOperationException("Failed to save image file");
+                }
+                
+                // Set file permissions for Linux containers
+                if (Environment.OSVersion.Platform == PlatformID.Unix)
+                {
+                    try
+                    {
+                        var fileInfo = new FileInfo(fullPath);
+                        fileInfo.Attributes &= ~FileAttributes.ReadOnly;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Warning: Could not set file permissions: {ex.Message}");
+                    }
                 }
 
-                // Return just the relative path instead of the absolute URL
-                return $"images/properties/{uniqueFileName}";
+                // Return URL with forward slashes for web compatibility
+                return $"/images/properties/{uniqueFileName}";
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                Console.WriteLine($"Error saving image: {ex.Message}");
+                throw new InvalidOperationException($"Failed to save image: {ex.Message}", ex);
             }
         }
 

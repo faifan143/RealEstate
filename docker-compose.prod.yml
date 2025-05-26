@@ -41,7 +41,8 @@ services:
     networks:
       - realestate-network
     volumes:
-      - ./wwwroot:/app/wwwroot  # For static files access
+      # Use a named volume instead of bind mount to avoid overwriting container files
+      - realestate-images:/app/wwwroot/images
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:5268/health || exit 1"]
       interval: 30s
@@ -53,6 +54,8 @@ services:
 volumes:
   postgres-data:
     name: realestate-postgres-data
+  realestate-images:
+    name: realestate-images
 
 # Shared networks
 networks:
