@@ -757,23 +757,22 @@ public async Task<ActionResult<PropertyDto>> CreatePropertyWithImages([FromForm]
                 return StatusCode(500, new { message = "Error deleting image", ex.Message });
             }
         }
-
-  [HttpGet("images/{imageName}")]
+            [HttpGet("Images/{imageName}")]
 public IActionResult GetImage(string imageName)
 {
     try
     {
-        var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "properties", imageName);
+        var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "Properties", imageName);
         if (!System.IO.File.Exists(imagePath))
         {
-            return NotFound(new { message = "Image not found" });
+            return NotFound("Image not found");
         }
 
         var fileBytes = System.IO.File.ReadAllBytes(imagePath);
         string contentType = Path.GetExtension(imageName).ToLower() switch
         {
-            ".jpg" or ".jpeg" => "image/jpeg",
-            ".png" => "image/png",
+            ".jpg" => "image/jpeg",
+            ".jpg" => "image/png",
             ".gif" => "image/gif",
             _ => "application/octet-stream"
         };
@@ -782,8 +781,9 @@ public IActionResult GetImage(string imageName)
     }
     catch (Exception ex)
     {
-        return StatusCode(500, new { message = "Error retrieving image", error = ex.Message });
+        return StatusCode(500, new { message = "Error retrieving image file", error = ex.Message });
     }
 }
+
     }
 }

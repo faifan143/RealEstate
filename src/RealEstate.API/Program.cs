@@ -27,7 +27,7 @@ using RealEstate.Infrastructure.Repositories;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.DataProtection;
 
-var builder = WebApplicationBuilder.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -90,29 +90,29 @@ builder.Services.ConfigureAutoMapper();
 // Configure Swagger
 builder.Services.AddSwaggerGen(c =>
 {
-     c.SwaggerDoc("v1", new OpenApiInfo { Title = "RealEstate.NET", Version = "1" });
-     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-     {
-         Description = "JWT Authorization header using the Bearer scheme",
-         Name = "Authorization",
-         In = ParameterLocation.Header,
-         Type = SecuritySchemeType.ApiKey,
-         Scheme = "Bearer"
-     });
-     c.AddSecurityRequirement(new OpenApiSecurityRequirement
-     {
-         {
-             new OpenApiSecurityScheme
-             {
-                 Reference = new OpenApiReference
-                 {
-                     Type = ReferenceType.SecurityScheme,
-                     Id = "Bearer"
-                 }
-             },
-             Array.Empty<string>()
-         }
-     });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "RealEstate.NET", Version = "1" });
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "JWT Authorization header using the Bearer scheme",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
 });
 
 // Configure Data Protection
@@ -160,20 +160,19 @@ DatabaseUpdater.AddMissingColumns(builder.Configuration.GetConnectionString("Def
     throw new InvalidOperationException("Connection string not found"));
 
 // Use custom exception handling middleware
-app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware();
 
 app.UseRouting();
 
 // Enable CORS
-app.UseCors(x => x
-    .AllowAnyMethod()
+app.UseCors(x => x.AllowAnyMethod()
     .AllowAnyHeader()
     .AllowAnyOrigin());
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Map health check endpoint
+// Map health checks
 app.MapHealthChecks("/health");
 
 app.MapControllers();
@@ -184,13 +183,13 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     try
     {
-        var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-        var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+        var roleManager = services.GetRequiredService<RoleManager>();
+        var userManager = services.GetRequiredService<UserManager>();
         if (!await roleManager.RoleExistsAsync("Admin"))
         {
             await roleManager.CreateAsync(new IdentityRole("Admin"));
         }
-        var adminPhone = "123456789";
+        var adminPhone = "1234567890";
         var adminUser = await userManager.FindByNameAsync(adminPhone);
         if (adminUser == null)
         {
@@ -198,35 +197,35 @@ using (var scope = app.Services.CreateScope())
             {
                 UserName = adminPhone,
                 PhoneNumber = adminPhone,
-                FullName = "المدير",
-                Email = "admin@realestate.com",
+                FullName = "John Doe",
+                Email = "admin@realestate.net",
                 PhoneNumberConfirmed = true,
                 CreatedAt = DateTime.UtcNow
             };
             var result = await userManager.CreateAsync(adminUser, "Admin@123");
             if (result.Succeeded)
             {
-                await userManager.AddToRoleAsync(adminUser, "Admin");
-            }
+                    await userManager.AddToRoleAsync(adminUser, "Admin");
+                }
         }
     }
     catch (Exception ex)
     {
-        var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "An error occurred while seeding the database.");
+        var logger = services.GetRequiredService>();
+        logger.LogError(ex, "An error occurred while seeding the admin user.");
     }
 }
 
 // Ensure database is created
 using (var scope = app.Services.CreateScope())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    var dbContext = scope.ServiceProvider.GetRequiredService();
     dbContext.Database.EnsureCreated();
 }
 
 // Create directories for image uploads
-var imagesDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
-var propertiesImagesDirectory = Path.Combine(imagesDirectory, "properties");
+var imagesDirectory = Path.Combine(Directory.GetCurrentDirectory(), "images");
+var propertiesImagesDirectory = Path.Combine(imagesDirectory, "Images");
 if (!Directory.Exists(imagesDirectory))
 {
     Directory.CreateDirectory(imagesDirectory);
@@ -236,14 +235,14 @@ if (!Directory.Exists(propertiesImagesDirectory))
     Directory.CreateDirectory(propertiesImagesDirectory);
 }
 
-// Start the application and display server information
+// Start the application
 await app.StartAsync();
-var serverAddressesFeature = app.Services.GetRequiredService<IServer>().Features.Get<IServerAddressesFeature>();
+var serverAddressesFeature = app.Services.GetRequiredService().Features.Get();
 var addresses = serverAddressesFeature?.Addresses;
-Console.WriteLine("\n========== SERVER INFORMATION ==========");
-Console.WriteLine($"Environment: {app.Environment.EnvironmentName}");
-Console.WriteLine($"Application Name: RealEstate API");
-Console.WriteLine($"Start Time: {DateTime.UtcNow}");
+Console.WriteLine("\n=== Application Information ===");
+Console.WriteLine($"Environment}: {app.Environment.EnvironmentName}");
+Console.WriteLine("Applications Name: RealEstate.NET");
+Console.WriteLine("Start Time: {DateTime.Now}");
 if (addresses != null && addresses.Any())
 {
     Console.WriteLine("\nServer Endpoints:");
@@ -260,15 +259,15 @@ foreach (var nic in networkInterfaces)
 {
     var ipProps = nic.GetIPProperties();
     var ipAddresses = ipProps.UnicastAddresses
-        .Where(addr => addr.Address.AddressFamily == AddressFamily.InterNetwork)
-        .Select(addr => addr.Address.ToString())
+        .Where(i => i.Address.AddressFamily == AddressFamily.InterNetwork)
+        .Select(i => i.Address.ToString())
         .ToList();
     if (ipAddresses.Any())
     {
         Console.WriteLine($"  - {nic.Name}: {string.Join(", ", ipAddresses)}");
     }
 }
-Console.WriteLine("\nSwagger UI: http://localhost:5268/swagger");
+Console.WriteLine("\nSwagger UI: http://localhost:5173/swagger");
 Console.WriteLine("\nPress Ctrl+C to shut down.");
-Console.WriteLine("=======================================\n");
+Console.WriteLine("=================================");
 await app.WaitForShutdownAsync();
