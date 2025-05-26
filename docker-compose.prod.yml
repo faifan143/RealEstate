@@ -1,35 +1,11 @@
-version: '3.8'
-
 services:
-  # PostgreSQL Database
-  postgres:
-    image: postgres:15
-    container_name: realestate-postgres
-    environment:
-      POSTGRES_DB: realestate
-      POSTGRES_USER: realestateuser
-      POSTGRES_PASSWORD: 123
-    ports:
-      - "7432:5432"  # Using uncommon external port
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-    restart: unless-stopped
-    networks:
-      - realestate-network
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U realestateuser -d realestate"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  # .NET API Application
   api:
     build:
       context: .
       dockerfile: src/RealEstate.API/Dockerfile.prod
     container_name: realestate-api
     ports:
-      - "7269:5268"  # Map to app's natural port inside container
+      - "7269:5268"
     environment:
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=realestate;Username=realestateuser;Password=123
       - ASPNETCORE_ENVIRONMENT=Production
@@ -41,23 +17,23 @@ services:
     networks:
       - realestate-network
     volumes:
-      # Use a named volume instead of bind mount to avoid overwriting container files
       - realestate-images:/app/wwwroot/images
+      - realestate-dataprotection:/root/.aspnet/DataProtection-Keys # Added for data protection keys
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:5268/health || exit 1"]
       interval: 30s
       timeout: 10s
-      retries: 3
-      start_period: 40s
+      retries: 5 # Increased for robustness
+      start_period: 60s # Increased to allow more startup time
 
-# Shared volumes
 volumes:
   postgres-data:
     name: realestate-postgres-data
   realestate-images:
     name: realestate-images
+  realestate-dataprotection: # Added volume
+    name: realestate-dataprotection
 
-# Shared networks
 networks:
   realestate-network:
     name: realestate-network

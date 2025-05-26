@@ -171,6 +171,19 @@ app.UseCors(x => x
 app.UseAuthentication();
 app.UseAuthorization();
 
+
+// Add health checks
+builder.Services.AddHealthChecks()
+    .AddDbContextCheck<ApplicationDbContext>(); 
+
+app.UseStaticFiles(new StaticFileOptions { ... });
+app.UseCors(...);
+app.UseAuthentication();
+app.UseAuthorization();
+
+// Map health check endpoint
+app.MapHealthChecks("/health");
+
 app.MapControllers();
 
 // Seed database with admin user only (no roles needed for queue system)

@@ -220,17 +220,17 @@ docker exec realestate-api ls -la /app/wwwroot/images/ 2>/dev/null || echo "Coul
 # Step 13: Final verification
 echo "✨ Step 13: Final verification..."
 
-# Check if containers are healthy
-if docker ps | grep -q "realestate-api.*Up"; then
-    print_status "API container is running"
+if docker ps | grep -q "realestate-api.*Up.*healthy"; then
+    print_status "API container is running and healthy"
 else
-    print_error "API container is not running properly"
-fi
-
-if docker ps | grep -q "realestate-postgres.*Up"; then
-    print_status "Database container is running"
-else
-    print_error "Database container is not running properly"
+    print_error "API container is not running properly or not healthy"
+    echo "=== API Container Logs (last 50 lines) ==="
+    docker logs --tail 50 realestate-api
+    echo "=== Container Health Status ==="
+    docker inspect realestate-api --format '{{.State.Health.Status}}'
+    echo "=== Health Check Test ==="
+    docker exec realestate-api curl -v http://localhost:5268/health || echo "Health check failed"
+    exit 1
 fi
 
 # Step 14: Summary and next steps
