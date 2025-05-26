@@ -13,6 +13,7 @@ using RealEstate.Core.Interfaces;
 using System.Text.Json;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http.Headers;
+using System.IO;
 
 namespace RealEstate.API.Controllers
 {
@@ -57,7 +58,6 @@ namespace RealEstate.API.Controllers
                 // Handle rental properties filtering without using direct column reference
                 if (parameters.IsForRent.HasValue || parameters.IsForSale.HasValue)
                 {
-                    // Filter based on rental duration or end date instead
                     if (parameters.IsForRent.HasValue && parameters.IsForRent.Value)
                     {
                         query = query.Where(p => p.RentalDurationMonths != null || p.RentalEndDate != null);
@@ -156,7 +156,6 @@ namespace RealEstate.API.Controllers
             }
             catch (Exception ex) when (ex.Message.Contains("column") && ex.Message.Contains("does not exist"))
             {
-                // Fallback approach if the columns don't exist yet
                 parameters ??= new PropertySearchParameters();
 
                 var query = _unitOfWork.Properties.Query();
@@ -196,7 +195,6 @@ namespace RealEstate.API.Controllers
                 int page = parameters.Page > 0 ? parameters.Page : 1;
                 int pageSize = parameters.PageSize > 0 ? parameters.PageSize : 10;
 
-                // Get all properties with a simpler select that doesn't include problematic columns
                 var properties = await query
                     .Skip((page - 1) * pageSize)
                     .Take(pageSize)
@@ -233,7 +231,6 @@ namespace RealEstate.API.Controllers
         {
             try
             {
-                // Get basic property info first with a specific select to avoid missing columns
                 var propertyBasic = await _unitOfWork.Properties.Query()
                     .Where(p => p.Id == id)
                     .Select(p => new
@@ -264,7 +261,6 @@ namespace RealEstate.API.Controllers
                 if (propertyBasic == null)
                     return NotFound(new { message = "العقار غير موجود" });
 
-                // Get related data
                 var owner = await _unitOfWork.Repository<ApplicationUser>().GetByIdAsync(propertyBasic.OwnerId);
                 var images = await _unitOfWork.PropertyImages.Query()
                     .Where(i => i.PropertyId == id)
@@ -274,7 +270,6 @@ namespace RealEstate.API.Controllers
                     .Include(i => i.User)
                     .ToListAsync() ?? new List<UserUploadedImage>();
 
-                // Create full property object
                 var property = new Property
                 {
                     Id = propertyBasic.Id,
@@ -308,13 +303,11 @@ namespace RealEstate.API.Controllers
             }
             catch (Exception ex) when (ex.Message.Contains("column") && ex.Message.Contains("does not exist"))
             {
-                // Fallback approach if the columns don't exist yet
                 var property = await _unitOfWork.Properties.GetByIdAsync(id);
                 
                 if (property == null)
                     return NotFound(new { message = "العقار غير موجود" });
 
-                // Get related data
                 var owner = await _unitOfWork.Repository<ApplicationUser>().GetByIdAsync(property.OwnerId);
                 var images = await _unitOfWork.PropertyImages.Query()
                     .Where(i => i.PropertyId == id)
@@ -324,7 +317,6 @@ namespace RealEstate.API.Controllers
                     .Include(i => i.User)
                     .ToListAsync() ?? new List<UserUploadedImage>();
 
-                // Add related data
                 property.Owner = owner ?? new ApplicationUser { FullName = "Unknown" };
                 property.Images = images;
                 property.UserUploadedImages = userImages;
@@ -363,7 +355,6 @@ namespace RealEstate.API.Controllers
                 OwnerId = userId,
                 Features = propertyDto.Features,
                 CreatedAt = DateTime.UtcNow,
-                // Set rental info based on IsForRent flag from DTO
                 RentalDurationMonths = propertyDto.IsForRent ? propertyDto.RentalDurationMonths : null,
                 RentalEndDate = propertyDto.IsForRent && propertyDto.RentalEndDate.HasValue ? 
                     DateTime.SpecifyKind(propertyDto.RentalEndDate.Value, DateTimeKind.Utc) : null,
@@ -395,7 +386,6 @@ namespace RealEstate.API.Controllers
             if (property.OwnerId != userId && !User.IsInRole("Admin"))
                 return Forbid();
 
-            // Update fields
             if (propertyDto.Title != null) property.Title = propertyDto.Title;
             if (propertyDto.Description != null) property.Description = propertyDto.Description;
             if (propertyDto.Address != null) property.Address = propertyDto.Address;
@@ -410,25 +400,21 @@ namespace RealEstate.API.Controllers
             if (propertyDto.Features != null) property.Features = propertyDto.Features;
             if (propertyDto.IsAvailable.HasValue) property.IsAvailable = propertyDto.IsAvailable.Value;
             
-            // Update rental information based on IsForRent flag
             if (propertyDto.IsForRent.HasValue)
             {
                 if (propertyDto.IsForRent.Value)
                 {
-                    // If property is for rent, set rental values from the DTO
                     property.RentalDurationMonths = propertyDto.RentalDurationMonths ?? property.RentalDurationMonths;
                     property.RentalEndDate = propertyDto.RentalEndDate ?? property.RentalEndDate;
                 }
                 else
                 {
-                    // If property is not for rent, clear rental values
                     property.RentalDurationMonths = null;
                     property.RentalEndDate = null;
                 }
             }
             else
             {
-                // Update individual rental fields if provided
                 if (propertyDto.RentalDurationMonths.HasValue) property.RentalDurationMonths = propertyDto.RentalDurationMonths.Value;
                 if (propertyDto.RentalEndDate.HasValue) property.RentalEndDate = DateTime.SpecifyKind(propertyDto.RentalEndDate.Value, DateTimeKind.Utc);
             }
@@ -476,14 +462,21 @@ namespace RealEstate.API.Controllers
 
                 // Parse the property data from form
                 PropertyCreateDto propertyDto;
-                if (formData.PropertyData != null)
+                if (!string.IsNullOrEmpty(formData.PropertyData))
                 {
-                    propertyDto = JsonSerializer.Deserialize<PropertyCreateDto>(formData.PropertyData, 
-                        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                    try
+                    {
+                        propertyDto = JsonSerializer.Deserialize<PropertyCreateDto>(formData.PropertyData, 
+                            new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) 
+                            ?? new PropertyCreateDto();
+                    }
+                    catch (JsonException)
+                    {
+                        return BadRequest(new { message = "Invalid PropertyData format" });
+                    }
                 }
                 else
                 {
-                    // Fallback to direct form mapping
                     propertyDto = new PropertyCreateDto
                     {
                         Title = formData.Title,
@@ -502,11 +495,10 @@ namespace RealEstate.API.Controllers
                         IsForSale = formData.IsForSale,
                         RentalDurationMonths = formData.RentalDurationMonths,
                         RentalEndDate = formData.RentalEndDate,
-                        Features = formData.Features?.Split(',').ToList() ?? new List<string>()
+                        Features = formData.Features?.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList() ?? new List<string>()
                     };
                 }
 
-                // Create property
                 var property = new Property
                 {
                     Id = Guid.NewGuid(),
@@ -525,8 +517,7 @@ namespace RealEstate.API.Controllers
                     OwnerId = userId,
                     Features = propertyDto.Features,
                     CreatedAt = DateTime.UtcNow,
-                    MainImageUrl = propertyDto.MainImageUrl ?? "/images/properties/default.jpg", // Default image if none provided
-                    // Set rental info based on IsForRent flag from DTO
+                    MainImageUrl = propertyDto.MainImageUrl ?? "/images/properties/default.jpg",
                     RentalDurationMonths = propertyDto.IsForRent ? propertyDto.RentalDurationMonths : null,
                     RentalEndDate = propertyDto.IsForRent && propertyDto.RentalEndDate.HasValue ? 
                         DateTime.SpecifyKind(propertyDto.RentalEndDate.Value, DateTimeKind.Utc) : null,
@@ -534,7 +525,6 @@ namespace RealEstate.API.Controllers
                     IsForSale = propertyDto.IsForSale
                 };
 
-                // Handle main image upload
                 if (formData.MainImage != null)
                 {
                     string mainImageUrl = await SaveImageAsync(formData.MainImage);
@@ -545,11 +535,9 @@ namespace RealEstate.API.Controllers
                     property.MainImageUrl = propertyDto.MainImageUrl;
                 }
 
-                // Save property
                 await _unitOfWork.Properties.AddAsync(property);
                 await _unitOfWork.CompleteAsync();
 
-                // Handle additional images
                 if (formData.AdditionalImages != null && formData.AdditionalImages.Count > 0)
                 {
                     foreach (var image in formData.AdditionalImages)
@@ -561,7 +549,7 @@ namespace RealEstate.API.Controllers
                             Id = Guid.NewGuid(),
                             PropertyId = property.Id,
                             Url = imageUrl,
-                            Description = "Additional image for " + property.Title,
+                            Description = "Additional image for " + (property.Title ?? "property"),
                             Order = 0,
                             CreatedAt = DateTime.UtcNow
                         };
@@ -572,7 +560,6 @@ namespace RealEstate.API.Controllers
                     await _unitOfWork.CompleteAsync();
                 }
 
-                // Get the complete property with image URLs
                 var resultDto = _mapper.Map<PropertyDto>(property);
                 return CreatedAtAction(nameof(GetProperty), new { id = property.Id }, resultDto);
             }
@@ -586,16 +573,12 @@ namespace RealEstate.API.Controllers
         {
             try
             {
-                // Use forward slashes for cross-platform compatibility
                 var folderName = Path.Combine("wwwroot", "images", "properties");
                 var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
                 
-                // Ensure directory exists with proper permissions
                 if (!Directory.Exists(pathToSave))
                 {
                     Directory.CreateDirectory(pathToSave);
-                    
-                    // Set permissions for Linux containers
                     if (Environment.OSVersion.Platform == PlatformID.Unix)
                     {
                         try
@@ -610,31 +593,26 @@ namespace RealEstate.API.Controllers
                     }
                 }
 
-                // Create a unique filename with sanitization
                 string originalFileName = ContentDispositionHeaderValue.Parse(image.ContentDisposition).FileName?.Trim('"') ?? "image";
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(originalFileName);
                 string extension = Path.GetExtension(originalFileName);
                 
-                // Sanitize filename for cross-platform compatibility
                 fileNameWithoutExtension = System.Text.RegularExpressions.Regex.Replace(fileNameWithoutExtension, @"[^a-zA-Z0-9_-]", "_");
                 
                 string uniqueFileName = $"{fileNameWithoutExtension}_{DateTime.UtcNow:yyyyMMddHHmmss}{extension}";
                 string fullPath = Path.Combine(pathToSave, uniqueFileName);
                 
-                // Copy file with proper error handling
                 using (var stream = new FileStream(fullPath, FileMode.Create, FileAccess.Write))
                 {
                     await image.CopyToAsync(stream);
                     await stream.FlushAsync();
                 }
                 
-                // Verify file was created
                 if (!File.Exists(fullPath))
                 {
                     throw new InvalidOperationException("Failed to save image file");
                 }
                 
-                // Set file permissions for Linux containers
                 if (Environment.OSVersion.Platform == PlatformID.Unix)
                 {
                     try
@@ -648,7 +626,6 @@ namespace RealEstate.API.Controllers
                     }
                 }
 
-                // Return URL with forward slashes for web compatibility
                 return $"/images/properties/{uniqueFileName}";
             }
             catch (Exception ex)
@@ -689,7 +666,7 @@ namespace RealEstate.API.Controllers
                         Id = Guid.NewGuid(),
                         PropertyId = property.Id,
                         Url = imageUrl,
-                        Description = "Additional image for " + property.Title,
+                        Description = "Additional image for " + (property.Title ?? "property"),
                         Order = 0,
                         CreatedAt = DateTime.UtcNow
                     };
@@ -772,14 +749,39 @@ namespace RealEstate.API.Controllers
                 _unitOfWork.PropertyImages.Remove(image);
                 await _unitOfWork.CompleteAsync();
 
-                // Optionally delete the physical file
-                // DeleteImageFile(image.ImageUrl);
-
                 return Ok(new { message = "تم حذف الصورة بنجاح" });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "حدث خطأ أثناء حذف الصورة", error = ex.Message });
+                return StatusCode(500, new { message = "Error deleting image", ex.Message });
+            }
+        }
+
+        [HttpGet("images/{imageName}")]
+        public IActionResult GetImage(string imageName)
+        {
+            try
+            {
+                var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "properties", imageName);
+                if (!System.IO.File.Exists(imagePath))
+                {
+                    return NotFound("Image not found");
+                }
+
+                var fileBytes = System.IO.File.ReadAllBytes(imagePath);
+                string contentType = Path.GetExtension(imageName).ToLower() switch
+                {
+                    ".jpg" or ".jpeg" => "image/jpeg",
+                    ".png" => "image/png",
+                    ".gif" => "image/gif",
+                    _ => "application/octet-stream"
+                };
+
+                return File(fileBytes, contentType);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Error retrieving image", error = ex.Message });
             }
         }
     }

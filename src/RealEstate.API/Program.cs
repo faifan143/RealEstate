@@ -24,6 +24,7 @@ using RealEstate.Core.Entities;
 using RealEstate.Core.Interfaces;
 using RealEstate.Infrastructure.Data;
 using RealEstate.Infrastructure.Repositories;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -113,6 +114,10 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// Configure Data Protection
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo("/root/.aspnet/DataProtection-Keys"));
+
 var app = builder.Build();
 
 // Apply database migrations before starting the app
@@ -139,17 +144,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RealEstate API v1"));
 }
 
-// Disable HTTPS redirection
-// app.UseHttpsRedirection();
-
 // Configure static file serving for uploaded images
 app.UseStaticFiles(new StaticFileOptions
 {
     OnPrepareResponse = ctx =>
     {
-        ctx.Context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
-        ctx.Context.Response.Headers.Add("Access-Control-Allow-Methods", "GET");
-        ctx.Context.Response.Headers.Add("Cache-Control", "public,max-age=2592000");
+        ctx.Context.Response.Headers.Append("Access-Control-Allow-Origin", "*");
+        ctx.Context.Response.Headers.Append("Access-Control-Allow-Methods", "GET");
+        ctx.Context.Response.Headers.Append("Cache-Control", "public,max-age=2592000");
     }
 });
 
