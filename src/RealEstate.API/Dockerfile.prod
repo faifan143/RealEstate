@@ -33,8 +33,8 @@ COPY --from=publish /app/publish .
 RUN mkdir -p wwwroot/images/properties && \
     mkdir -p logs && \
     mkdir -p /root/.aspnet/DataProtection-Keys && \
-    chmod -R 755 wwwroot logs /root/.aspnet && \
-    chown -R appuser:appuser wwwroot logs
+    chmod -R 777 wwwroot logs /root/.aspnet && \
+    chown -R appuser:appuser wwwroot logs /root/.aspnet
 
 # Set environment variables
 ENV ASPNETCORE_URLS=http://+:5268
