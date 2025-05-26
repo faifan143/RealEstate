@@ -30,6 +30,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 
+// Add health checks
+builder.Services.AddHealthChecks()
+    .AddDbContextCheck<ApplicationDbContext>();
+
 // Configure PostgreSQL connection
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -42,8 +46,6 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     options.Password.RequireLowercase = true;
     options.Password.RequireUppercase = true;
     options.Password.RequireNonAlphanumeric = false;
-    
-    // Configure for phone number login
     options.User.RequireUniqueEmail = false;
     options.SignIn.RequireConfirmedAccount = false;
     options.SignIn.RequireConfirmedEmail = false;
@@ -95,7 +97,6 @@ builder.Services.AddSwaggerGen(c =>
         Type = SecuritySchemeType.ApiKey,
         Scheme = "Bearer"
     });
-
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -127,7 +128,6 @@ using (var scope = app.Services.CreateScope())
     catch (Exception ex)
     {
         Console.WriteLine($"Error during startup: {ex.Message}");
-        // Continue with application startup even if migrations fail
     }
 }
 
@@ -139,17 +139,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RealEstate API v1"));
 }
 
-app.UseHttpsRedirection();
+// Disable HTTPS redirection
+// app.UseHttpsRedirection();
 
 // Configure static file serving for uploaded images
 app.UseStaticFiles(new StaticFileOptions
 {
     OnPrepareResponse = ctx =>
     {
-        // Enable CORS for images
         ctx.Context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
         ctx.Context.Response.Headers.Add("Access-Control-Allow-Methods", "GET");
-        ctx.Context.Response.Headers.Add("Cache-Control", "public,max-age=2592000"); // 30 days
+        ctx.Context.Response.Headers.Add("Cache-Control", "public,max-age=2592000");
     }
 });
 
@@ -171,22 +171,12 @@ app.UseCors(x => x
 app.UseAuthentication();
 app.UseAuthorization();
 
-
-// Add health checks
-builder.Services.AddHealthChecks()
-    .AddDbContextCheck<ApplicationDbContext>(); 
-
-app.UseStaticFiles(new StaticFileOptions { ... });
-app.UseCors(...);
-app.UseAuthentication();
-app.UseAuthorization();
-
 // Map health check endpoint
 app.MapHealthChecks("/health");
 
 app.MapControllers();
 
-// Seed database with admin user only (no roles needed for queue system)
+// Seed database with admin user
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -194,14 +184,10 @@ using (var scope = app.Services.CreateScope())
     {
         var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
         var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
-
-        // Create Admin role for image approval only
         if (!await roleManager.RoleExistsAsync("Admin"))
         {
             await roleManager.CreateAsync(new IdentityRole("Admin"));
         }
-
-        // Create admin user
         var adminPhone = "123456789";
         var adminUser = await userManager.FindByNameAsync(adminPhone);
         if (adminUser == null)
@@ -215,7 +201,6 @@ using (var scope = app.Services.CreateScope())
                 PhoneNumberConfirmed = true,
                 CreatedAt = DateTime.UtcNow
             };
-
             var result = await userManager.CreateAsync(adminUser, "Admin@123");
             if (result.Succeeded)
             {
@@ -230,8 +215,6 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-
-
 // Ensure database is created
 using (var scope = app.Services.CreateScope())
 {
@@ -239,16 +222,13 @@ using (var scope = app.Services.CreateScope())
     dbContext.Database.EnsureCreated();
 }
 
-
-// Create directories for image uploads if they don't exist
+// Create directories for image uploads
 var imagesDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
 var propertiesImagesDirectory = Path.Combine(imagesDirectory, "properties");
-
 if (!Directory.Exists(imagesDirectory))
 {
     Directory.CreateDirectory(imagesDirectory);
 }
-
 if (!Directory.Exists(propertiesImagesDirectory))
 {
     Directory.CreateDirectory(propertiesImagesDirectory);
@@ -256,16 +236,12 @@ if (!Directory.Exists(propertiesImagesDirectory))
 
 // Start the application and display server information
 await app.StartAsync();
-
-// Get server addresses
 var serverAddressesFeature = app.Services.GetRequiredService<IServer>().Features.Get<IServerAddressesFeature>();
 var addresses = serverAddressesFeature?.Addresses;
-
 Console.WriteLine("\n========== SERVER INFORMATION ==========");
 Console.WriteLine($"Environment: {app.Environment.EnvironmentName}");
 Console.WriteLine($"Application Name: RealEstate API");
 Console.WriteLine($"Start Time: {DateTime.UtcNow}");
-
 if (addresses != null && addresses.Any())
 {
     Console.WriteLine("\nServer Endpoints:");
@@ -274,13 +250,10 @@ if (addresses != null && addresses.Any())
         Console.WriteLine($"  - {address}");
     }
 }
-
-// Display local IP addresses
 Console.WriteLine("\nLocal Network Interfaces:");
 var networkInterfaces = NetworkInterface.GetAllNetworkInterfaces()
     .Where(i => i.OperationalStatus == OperationalStatus.Up && i.NetworkInterfaceType != NetworkInterfaceType.Loopback)
     .ToList();
-
 foreach (var nic in networkInterfaces)
 {
     var ipProps = nic.GetIPProperties();
@@ -288,15 +261,12 @@ foreach (var nic in networkInterfaces)
         .Where(addr => addr.Address.AddressFamily == AddressFamily.InterNetwork)
         .Select(addr => addr.Address.ToString())
         .ToList();
-
     if (ipAddresses.Any())
     {
         Console.WriteLine($"  - {nic.Name}: {string.Join(", ", ipAddresses)}");
     }
 }
-
 Console.WriteLine("\nSwagger UI: http://localhost:5268/swagger");
 Console.WriteLine("\nPress Ctrl+C to shut down.");
 Console.WriteLine("=======================================\n");
-
 await app.WaitForShutdownAsync();

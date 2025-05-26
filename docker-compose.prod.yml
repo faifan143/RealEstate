@@ -40,6 +40,7 @@ services:
       - realestate-network
     volumes:
       - realestate-images:/app/wwwroot/images
+      - realestate-dataprotection:/root/.aspnet/DataProtection-Keys
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:5268/health || exit 1"]
       interval: 30s
@@ -52,6 +53,8 @@ volumes:
     name: realestate-postgres-data
   realestate-images:
     name: realestate-images
+  realestate-dataprotection:
+    name: realestate-dataprotection
 
 networks:
   realestate-network:
