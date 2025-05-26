@@ -73,7 +73,7 @@ services:
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - realestate-images:/var/www/realestate/images:ro
+      - realestate-images:/var/www/realestate/images
     depends_on:
       - api
     restart: unless-stopped
