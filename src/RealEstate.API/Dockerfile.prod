@@ -13,25 +13,43 @@ RUN dotnet build "src/RealEstate.API/RealEstate.API.csproj" -c Release -o /app/b
 
 # Publish the application
 FROM build AS publish
-RUN dotnet publish "src/RealEstate.API/RealEstate.API.csproj" -c Release -o /app/publish
+RUN dotnet publish "src/RealEstate.API/RealEstate.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 
-# Install curl for health checks
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+# Install curl for health checks and set up non-root user
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends curl && \
+    rm -rf /var/lib/apt/lists/* && \
+    groupadd -r appuser && \
+    useradd -r -g appuser appuser
 
+# Copy published files
 COPY --from=publish /app/publish .
 
 # Create wwwroot directory structure with proper permissions
 RUN mkdir -p wwwroot/images/properties && \
-    chmod -R 755 wwwroot && \
-    chown -R www-data:www-data wwwroot
+    mkdir -p logs && \
+    mkdir -p /root/.aspnet/DataProtection-Keys && \
+    chmod -R 755 wwwroot logs /root/.aspnet && \
+    chown -R appuser:appuser wwwroot logs
 
 # Set environment variables
 ENV ASPNETCORE_URLS=http://+:5268
 ENV ASPNETCORE_ENVIRONMENT=Production
 
+# Create health check script
+COPY src/RealEstate.API/health-check.sh /app/health-check.sh
+RUN chmod +x /app/health-check.sh
+
+# Switch to non-root user
+USER appuser
+
 EXPOSE 5268
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+    CMD curl -f http://localhost:5268/health || exit 1
+
 ENTRYPOINT ["dotnet", "RealEstate.API.dll"]

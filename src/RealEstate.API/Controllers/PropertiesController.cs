@@ -14,6 +14,7 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http.Headers;
 using System.IO;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace RealEstate.API.Controllers
 {
@@ -449,127 +450,128 @@ namespace RealEstate.API.Controllers
             return Ok(new { success = true, message = "تم حذف العقار بنجاح" });
         }
 
-[HttpPost("with-images")]
-[Authorize]
-public async Task<ActionResult<PropertyDto>> CreatePropertyWithImages([FromForm] PropertyCreateFormDto formData)
-{
-    try
-    {
-        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-        if (string.IsNullOrEmpty(userId))
-            return Unauthorized(new { message = "المستخدم غير مصرح له" });
-
-        // Parse the property data from form
-        PropertyCreateDto propertyDto;
-        if (!string.IsNullOrEmpty(formData.PropertyData))
+        [HttpPost("with-images")]
+        [Authorize]
+        public async Task<ActionResult<PropertyDto>> CreatePropertyWithImages([FromForm] PropertyCreateFormDto formData)
         {
             try
             {
-                propertyDto = JsonSerializer.Deserialize<PropertyCreateDto>(formData.PropertyData, 
-                    new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) 
-                    ?? new PropertyCreateDto();
-            }
-            catch (JsonException)
-            {
-                return BadRequest(new { message = "Invalid PropertyData format" });
-            }
-        }
-        else
-        {
-            propertyDto = new PropertyCreateDto
-            {
-                Title = formData.Title,
-                Description = formData.Description,
-                Price = formData.Price,
-                Area = formData.Area,
-                Bedrooms = formData.Bedrooms,
-                Bathrooms = formData.Bathrooms,
-                PropertyType = formData.PropertyType,
-                Location = formData.Location,
-                Address = formData.Address,
-                Latitude = formData.Latitude,
-                Longitude = formData.Longitude,
-                IsAvailable = formData.IsAvailable,
-                IsForRent = formData.IsForRent,
-                IsForSale = formData.IsForSale,
-                RentalDurationMonths = formData.RentalDurationMonths,
-                RentalEndDate = formData.RentalEndDate,
-                Features = formData.Features != null 
-                    ? formData.Features.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList() 
-                    : new List<string>()
-            };
-        }
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-        var property = new Property
-        {
-            Id = Guid.NewGuid(),
-            Title = propertyDto.Title,
-            Description = propertyDto.Description,
-            Price = propertyDto.Price,
-            Area = propertyDto.Area,
-            Bedrooms = propertyDto.Bedrooms,
-            Bathrooms = propertyDto.Bathrooms,
-            PropertyType = propertyDto.PropertyType,
-            Location = propertyDto.Location,
-            Address = propertyDto.Address,
-            Latitude = propertyDto.Latitude,
-            Longitude = propertyDto.Longitude,
-            IsAvailable = propertyDto.IsAvailable,
-            OwnerId = userId,
-            Features = propertyDto.Features,
-            CreatedAt = DateTime.UtcNow,
-            MainImageUrl = propertyDto.MainImageUrl ?? "/images/properties/default.jpg",
-            RentalDurationMonths = propertyDto.IsForRent ? propertyDto.RentalDurationMonths : null,
-            RentalEndDate = propertyDto.IsForRent && propertyDto.RentalEndDate.HasValue ? 
-                DateTime.SpecifyKind(propertyDto.RentalEndDate.Value, DateTimeKind.Utc) : null,
-            IsForRent = propertyDto.IsForRent,
-            IsForSale = propertyDto.IsForSale
-        };
+                if (string.IsNullOrEmpty(userId))
+                    return Unauthorized(new { message = "المستخدم غير مصرح له" });
 
-        if (formData.MainImage != null)
-        {
-            string mainImageUrl = await SaveImageAsync(formData.MainImage);
-            property.MainImageUrl = mainImageUrl;
-        }
-        else
-        {
-            property.MainImageUrl = propertyDto.MainImageUrl;
-        }
+                // Parse the property data from form
+                PropertyCreateDto propertyDto;
+                if (!string.IsNullOrEmpty(formData.PropertyData))
+                {
+                    try
+                    {
+                        propertyDto = JsonSerializer.Deserialize<PropertyCreateDto>(formData.PropertyData, 
+                            new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) 
+                            ?? new PropertyCreateDto();
+                    }
+                    catch (JsonException)
+                    {
+                        return BadRequest(new { message = "Invalid PropertyData format" });
+                    }
+                }
+                else
+                {
+                    propertyDto = new PropertyCreateDto
+                    {
+                        Title = formData.Title,
+                        Description = formData.Description,
+                        Price = formData.Price,
+                        Area = formData.Area,
+                        Bedrooms = formData.Bedrooms,
+                        Bathrooms = formData.Bathrooms,
+                        PropertyType = formData.PropertyType,
+                        Location = formData.Location,
+                        Address = formData.Address,
+                        Latitude = formData.Latitude,
+                        Longitude = formData.Longitude,
+                        IsAvailable = formData.IsAvailable,
+                        IsForRent = formData.IsForRent,
+                        IsForSale = formData.IsForSale,
+                        RentalDurationMonths = formData.RentalDurationMonths,
+                        RentalEndDate = formData.RentalEndDate,
+                        Features = formData.Features != null 
+                            ? formData.Features.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList() 
+                            : new List<string>()
+                    };
+                }
 
-        await _unitOfWork.Properties.AddAsync(property);
-        await _unitOfWork.CompleteAsync();
-
-        if (formData.AdditionalImages != null && formData.AdditionalImages.Count > 0)
-        {
-            foreach (var image in formData.AdditionalImages)
-            {
-                string imageUrl = await SaveImageAsync(image);
-                
-                var propertyImage = new PropertyImage
+                var property = new Property
                 {
                     Id = Guid.NewGuid(),
-                    PropertyId = property.Id,
-                    Url = imageUrl,
-                    Description = "Additional image for " + (property.Title ?? "property"),
-                    Order = 0,
-                    CreatedAt = DateTime.UtcNow
+                    Title = propertyDto.Title,
+                    Description = propertyDto.Description,
+                    Price = propertyDto.Price,
+                    Area = propertyDto.Area,
+                    Bedrooms = propertyDto.Bedrooms,
+                    Bathrooms = propertyDto.Bathrooms,
+                    PropertyType = propertyDto.PropertyType,
+                    Location = propertyDto.Location,
+                    Address = propertyDto.Address,
+                    Latitude = propertyDto.Latitude,
+                    Longitude = propertyDto.Longitude,
+                    IsAvailable = propertyDto.IsAvailable,
+                    OwnerId = userId,
+                    Features = propertyDto.Features,
+                    CreatedAt = DateTime.UtcNow,
+                    MainImageUrl = propertyDto.MainImageUrl ?? "/images/properties/default.jpg",
+                    RentalDurationMonths = propertyDto.IsForRent ? propertyDto.RentalDurationMonths : null,
+                    RentalEndDate = propertyDto.IsForRent && propertyDto.RentalEndDate.HasValue ? 
+                        DateTime.SpecifyKind(propertyDto.RentalEndDate.Value, DateTimeKind.Utc) : null,
+                    IsForRent = propertyDto.IsForRent,
+                    IsForSale = propertyDto.IsForSale
                 };
 
-                await _unitOfWork.PropertyImages.AddAsync(propertyImage);
-            }
+                if (formData.MainImage != null)
+                {
+                    string mainImageUrl = await SaveImageAsync(formData.MainImage);
+                    property.MainImageUrl = mainImageUrl;
+                }
+                else
+                {
+                    property.MainImageUrl = propertyDto.MainImageUrl ?? "/images/properties/default.jpg";
+                }
 
-            await _unitOfWork.CompleteAsync();
+                await _unitOfWork.Properties.AddAsync(property);
+                await _unitOfWork.CompleteAsync();
+
+                if (formData.AdditionalImages != null && formData.AdditionalImages.Count > 0)
+                {
+                    foreach (var image in formData.AdditionalImages)
+                    {
+                        string imageUrl = await SaveImageAsync(image);
+                        
+                        var propertyImage = new PropertyImage
+                        {
+                            Id = Guid.NewGuid(),
+                            PropertyId = property.Id,
+                            Url = imageUrl,
+                            Description = "Additional image for " + (property.Title ?? "property"),
+                            Order = 0,
+                            CreatedAt = DateTime.UtcNow
+                        };
+
+                        await _unitOfWork.PropertyImages.AddAsync(propertyImage);
+                    }
+
+                    await _unitOfWork.CompleteAsync();
+                }
+
+                var resultDto = _mapper.Map<PropertyDto>(property);
+                return CreatedAtAction(nameof(GetProperty), new { id = property.Id }, resultDto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "حدث خطأ أثناء إنشاء العقار", error = ex.Message });
+            }
         }
 
-        var resultDto = _mapper.Map<PropertyDto>(property);
-        return CreatedAtAction(nameof(GetProperty), new { id = property.Id }, resultDto);
-    }
-    catch (Exception ex)
-    {
-        return StatusCode(500, new { message = "حدث خطأ أثناء إنشاء العقار", error = ex.Message });
-    }
-}
         private async Task<string> SaveImageAsync(IFormFile image)
         {
             try
@@ -609,7 +611,7 @@ public async Task<ActionResult<PropertyDto>> CreatePropertyWithImages([FromForm]
                     await stream.FlushAsync();
                 }
                 
-                if (!File.Exists(fullPath))
+                if (!System.IO.File.Exists(fullPath))
                 {
                     throw new InvalidOperationException("Failed to save image file");
                 }
@@ -757,33 +759,7 @@ public async Task<ActionResult<PropertyDto>> CreatePropertyWithImages([FromForm]
                 return StatusCode(500, new { message = "Error deleting image", ex.Message });
             }
         }
-            [HttpGet("Images/{imageName}")]
-public IActionResult GetImage(string imageName)
-{
-    try
-    {
-        var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "Properties", imageName);
-        if (!System.IO.File.Exists(imagePath))
-        {
-            return NotFound("Image not found");
-        }
 
-        var fileBytes = System.IO.File.ReadAllBytes(imagePath);
-        string contentType = Path.GetExtension(imageName).ToLower() switch
-        {
-            ".jpg" => "image/jpeg",
-            ".jpg" => "image/png",
-            ".gif" => "image/gif",
-            _ => "application/octet-stream"
-        };
-
-        return File(fileBytes, contentType);
-    }
-    catch (Exception ex)
-    {
-        return StatusCode(500, new { message = "Error retrieving image file", error = ex.Message });
-    }
-}
-
+        // Image handling moved to ImagesController
     }
 }

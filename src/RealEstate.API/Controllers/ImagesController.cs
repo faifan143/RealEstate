@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using RealEstate.Core.DTOs;
 using RealEstate.Core.Entities;
 using RealEstate.Core.Interfaces;
+using System.IO;
 
 namespace RealEstate.API.Controllers
 {
@@ -173,6 +174,34 @@ namespace RealEstate.API.Controllers
             });
 
             return Ok(imageDtos);
+        }
+
+        [HttpGet("properties/{imageName}")]
+        public IActionResult GetPropertyImage(string imageName)
+        {
+            try
+            {
+                var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "properties", imageName);
+                if (!System.IO.File.Exists(imagePath))
+                {
+                    return NotFound("Image not found");
+                }
+
+                var fileBytes = System.IO.File.ReadAllBytes(imagePath);
+                string contentType = Path.GetExtension(imageName).ToLower() switch
+                {
+                    ".jpg" => "image/jpeg",
+                    ".png" => "image/png",
+                    ".gif" => "image/gif",
+                    _ => "application/octet-stream"
+                };
+
+                return File(fileBytes, contentType);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Error retrieving image", error = ex.Message });
+            }
         }
     }
 }

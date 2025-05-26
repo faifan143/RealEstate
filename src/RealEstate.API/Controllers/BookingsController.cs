@@ -161,33 +161,34 @@ namespace RealEstate.API.Controllers
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized(new { message = "المستخدم غير مصرح له" });
 
-            // Get booking with projection to avoid missing column issue
-            var bookingData = await _unitOfWork.Repository<Booking>().Query()
-                .Include(b => b.Property)
-                .Where(b => b.Id == id)
-                .Select(b => new 
-                {
-                    b.Id,
-                    b.PropertyId,
-                    b.UserId,
-                    b.Status,
-                    b.RequestDate,
-                    // VisitDateTime excluded to avoid potential missing column issue
-                    b.Message,
-                    b.ContactPhone,
-                    b.CreatedAt,
-                    Property = new 
-                    {
-                        Title = b.Property.Title,
-                        Location = b.Property.Location,
-                        MainImageUrl = b.Property.MainImageUrl,
-                        Price = b.Property.Price
-                    }
-                })
-                .FirstOrDefaultAsync();
+                var bookingData = await _unitOfWork.Repository<Booking>().Query()
+                    .Include(b => b.Property)
+                    .Where(b => b.Id == id)
+                    .Select(b => new                     
+                        {
+                        b.Id,
+                        b.PropertyId,
+                        b.UserId,
+                        b.Status,
+                        b.RequestDate,
+                        b.Message,
+                        b.ContactPhone,
+                        b.CreatedAt,
+                        Property = b.Property != null 
+                            ? new 
+                            {
+                                Title = b.Property.Title ?? string.Empty,
+                                Location = b.Property.Location ?? string.Empty,
+                                MainImageUrl = b.Property.MainImageUrl ?? string.Empty,
+                                Price = b.Property.Price
+                            }
+                            : null
+                    })
+                    .FirstOrDefaultAsync();
 
-            if (bookingData == null)
-                return NotFound(new { message = "الحجز غير موجود" });
+                if (bookingData == null || bookingData.Property == null)
+                    return NotFound(new { message = "Booking not found" });
+
 
             // Check if the booking belongs to the user or the property owner
             if (bookingData.UserId != userId && !User.IsInRole("Admin"))
@@ -208,13 +209,13 @@ namespace RealEstate.API.Controllers
                 Message = bookingData.Message,
                 Success = true,
                 ResponseMessage = "تم جلب الحجز بنجاح",
-                Property = new PropertyBasicInfoDto
+                Property = bookingData.Property != null ? new PropertyBasicInfoDto
                 {
                     Title = bookingData.Property.Title,
                     Location = bookingData.Property.Location,
                     MainImageUrl = bookingData.Property.MainImageUrl,
                     Price = bookingData.Property.Price
-                }
+                } : new PropertyBasicInfoDto()
             };
 
             return Ok(bookingDto);
@@ -248,10 +249,12 @@ namespace RealEstate.API.Controllers
                 .Where(b => b.Id == id)
                 .FirstOrDefaultAsync();
 
-            booking.Status = BookingStatus.Canceled;
-            booking.UpdatedAt = DateTime.UtcNow;
-
-            _unitOfWork.Repository<Booking>().Update(booking);
+            if (booking != null)
+            {
+                booking.Status = BookingStatus.Canceled;
+                booking.UpdatedAt = DateTime.UtcNow;
+                _unitOfWork.Repository<Booking>().Update(booking);
+            }
             await _unitOfWork.CompleteAsync();
 
             return Ok(new { success = true, message = "تم إلغاء طلب الحجز بنجاح" });
@@ -289,10 +292,12 @@ namespace RealEstate.API.Controllers
                 .Where(b => b.Id == id)
                 .FirstOrDefaultAsync();
 
-            booking.Status = statusUpdateDto.Status;
-            booking.UpdatedAt = DateTime.UtcNow;
-
-            _unitOfWork.Repository<Booking>().Update(booking);
+            if (booking != null)
+            {
+                booking.Status = statusUpdateDto.Status;
+                booking.UpdatedAt = DateTime.UtcNow;
+                _unitOfWork.Repository<Booking>().Update(booking);
+            }
             await _unitOfWork.CompleteAsync();
 
             return Ok(new { success = true, message = "تم تحديث حالة الحجز بنجاح" });

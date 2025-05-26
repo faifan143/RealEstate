@@ -140,3 +140,4 @@ D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net8.0\refint\RealEstate.API.dll
 D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net8.0\RealEstate.API.pdb
 D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net8.0\RealEstate.API.genruntimeconfig.cache
 D:\mcp\RealEstate\src\RealEstate.API\obj\Debug\net8.0\ref\RealEstate.API.dll
+D:\mcp\RealEstate\src\RealEstate.API\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.dll

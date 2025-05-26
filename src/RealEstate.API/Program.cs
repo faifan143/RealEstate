@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
+using System.IO;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -151,7 +152,7 @@ app.UseStaticFiles(new StaticFileOptions
     {
         ctx.Context.Response.Headers.Append("Access-Control-Allow-Origin", "*");
         ctx.Context.Response.Headers.Append("Access-Control-Allow-Methods", "GET");
-        ctx.Context.Response.Headers.Append("Cache-Control", "public,max-age=2592000");
+        ctx.Context.Response.Headers.Append("Cache-Control", "public,max-age=3600");
     }
 });
 
@@ -160,7 +161,7 @@ DatabaseUpdater.AddMissingColumns(builder.Configuration.GetConnectionString("Def
     throw new InvalidOperationException("Connection string not found"));
 
 // Use custom exception handling middleware
-app.UseMiddleware();
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseRouting();
 
@@ -172,7 +173,7 @@ app.UseCors(x => x.AllowAnyMethod()
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Map health checks
+// Map health check endpoint
 app.MapHealthChecks("/health");
 
 app.MapControllers();
@@ -183,49 +184,49 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     try
     {
-        var roleManager = services.GetRequiredService<RoleManager>();
-        var userManager = services.GetRequiredService<UserManager>();
+        var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+        var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
         if (!await roleManager.RoleExistsAsync("Admin"))
         {
             await roleManager.CreateAsync(new IdentityRole("Admin"));
         }
-        var adminPhone = "1234567890";
+        var adminPhone = "123456789";
         var adminUser = await userManager.FindByNameAsync(adminPhone);
         if (adminUser == null)
-        {
+            {
             adminUser = new ApplicationUser
             {
                 UserName = adminPhone,
                 PhoneNumber = adminPhone,
-                FullName = "John Doe",
-                Email = "admin@realestate.net",
+                FullName = "المدير",
+                Email = "admin@realestate.com",
                 PhoneNumberConfirmed = true,
                 CreatedAt = DateTime.UtcNow
             };
             var result = await userManager.CreateAsync(adminUser, "Admin@123");
             if (result.Succeeded)
-            {
-                    await userManager.AddToRoleAsync(adminUser, "Admin");
+                {
+                await userManager.AddToRoleAsync(adminUser, "Admin");
                 }
         }
-    }
+        }
     catch (Exception ex)
     {
-        var logger = services.GetRequiredService>();
-        logger.LogError(ex, "An error occurred while seeding the admin user.");
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred during database seeding.");
     }
 }
 
 // Ensure database is created
 using (var scope = app.Services.CreateScope())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService();
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     dbContext.Database.EnsureCreated();
 }
 
-// Create directories for image uploads
-var imagesDirectory = Path.Combine(Directory.GetCurrentDirectory(), "images");
-var propertiesImagesDirectory = Path.Combine(imagesDirectory, "Images");
+// Create directories for images uploads
+var imagesDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+var propertiesImagesDirectory = Path.Combine(imagesDirectory, "properties");
 if (!Directory.Exists(imagesDirectory))
 {
     Directory.CreateDirectory(imagesDirectory);
@@ -237,12 +238,12 @@ if (!Directory.Exists(propertiesImagesDirectory))
 
 // Start the application
 await app.StartAsync();
-var serverAddressesFeature = app.Services.GetRequiredService().Features.Get();
+var serverAddressesFeature = app.Services.GetRequiredService<IServer>().Features.Get<IServerAddressesFeature>();
 var addresses = serverAddressesFeature?.Addresses;
-Console.WriteLine("\n=== Application Information ===");
-Console.WriteLine($"Environment}: {app.Environment.EnvironmentName}");
-Console.WriteLine("Applications Name: RealEstate.NET");
-Console.WriteLine("Start Time: {DateTime.Now}");
+Console.WriteLine("\n========== SERVER INFORMATION ==========");
+Console.WriteLine($"Environment: {app.Environment.EnvironmentName}");
+Console.WriteLine("Application Name: RealEstate.NET");
+Console.WriteLine($"Start Time: {DateTime.UtcNow}");
 if (addresses != null && addresses.Any())
 {
     Console.WriteLine("\nServer Endpoints:");
@@ -255,19 +256,20 @@ Console.WriteLine("\nLocal Network Interfaces:");
 var networkInterfaces = NetworkInterface.GetAllNetworkInterfaces()
     .Where(i => i.OperationalStatus == OperationalStatus.Up && i.NetworkInterfaceType != NetworkInterfaceType.Loopback)
     .ToList();
-foreach (var nic in networkInterfaces)
-{
-    var ipProps = nic.GetIPProperties();
-    var ipAddresses = ipProps.UnicastAddresses
-        .Where(i => i.Address.AddressFamily == AddressFamily.InterNetwork)
-        .Select(i => i.Address.ToString())
-        .ToList();
-    if (ipAddresses.Any())
+    foreach (var nic in networkInterfaces)
     {
-        Console.WriteLine($"  - {nic.Name}: {string.Join(", ", ipAddresses)}");
+        var ipProps = nic.GetIPProperties();
+        var ipAddresses = ipProps.UnicastAddresses
+            .Where(ip => ip.Address.AddressFamily == AddressFamily.InterNetwork)
+            .Select(ip => ip.Address.ToString())
+            .ToList();
+        if (ipAddresses.Any())
+            {
+            Console.WriteLine($"  - {nic.Name}: {string.Join(", ", ipAddresses)}");
+        }
     }
-}
-Console.WriteLine("\nSwagger UI: http://localhost:5173/swagger");
+
+Console.WriteLine("\nSwagger UI: http://localhost:5268/swagger");
 Console.WriteLine("\nPress Ctrl+C to shut down.");
-Console.WriteLine("=================================");
+Console.WriteLine("=======================================");
 await app.WaitForShutdownAsync();

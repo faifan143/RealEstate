@@ -2,16 +2,18 @@ version: '3.8'
 
 services:
   postgres:
-    image: postgres:15
+    image: postgres:15-alpine
     container_name: realestate-postgres
     environment:
       POSTGRES_DB: realestate
       POSTGRES_USER: realestateuser
-      POSTGRES_PASSWORD: 123
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-123}
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --lc-collate=C --lc-ctype=C"
     ports:
-      - "7432:5432"
+      - "127.0.0.1:7432:5432"  # Only accessible locally
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      - ./db-init:/docker-entrypoint-initdb.d  # Init scripts
     restart: unless-stopped
     networks:
       - realestate-network
@@ -20,18 +22,27 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   api:
     build:
       context: .
       dockerfile: src/RealEstate.API/Dockerfile.prod
+      args:
+        - BUILD_CONFIGURATION=Release
     container_name: realestate-api
     ports:
-      - "7269:5268"
+      - "127.0.0.1:5268:5268"  # Only accessible locally
     environment:
-      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=realestate;Username=realestateuser;Password=123
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=realestate;Username=realestateuser;Password=${DB_PASSWORD:-123};Pooling=true;
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:5268
+      - JWT__Secret=${JWT_SECRET:-MogaComedy@2001&RealEstateAPI4965#Backend754896}
     depends_on:
       postgres:
         condition: service_healthy
@@ -40,22 +51,51 @@ services:
       - realestate-network
     volumes:
       - realestate-images:/app/wwwroot/images
+      - realestate-logs:/app/logs
       - realestate-dataprotection:/root/.aspnet/DataProtection-Keys
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:5268/health || exit 1"]
+      test: ["CMD-SHELL", "/app/health-check.sh"]
       interval: 30s
       timeout: 10s
       retries: 5
       start_period: 60s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  nginx:
+    image: nginx:alpine
+    container_name: realestate-nginx
+    ports:
+      - "4545:80"  # Public port
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - realestate-images:/var/www/realestate/images:ro
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - realestate-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 
 volumes:
   postgres-data:
     name: realestate-postgres-data
   realestate-images:
     name: realestate-images
+  realestate-logs:
+    name: realestate-logs
   realestate-dataprotection:
     name: realestate-dataprotection
 
 networks:
   realestate-network:
     name: realestate-network
+    driver: bridge

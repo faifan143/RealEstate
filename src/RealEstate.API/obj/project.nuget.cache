@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KTb+RWaQiG4=",
+  "dgSpecHash": "q4hbgsm2INo=",
   "success": true,
   "projectFilePath": "D:\\mcp\\RealEstate\\src\\RealEstate.API\\RealEstate.API.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,12 @@
     "C:\\Users\\DerMokk\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.3\\microsoft.extensions.dependencyinjection.9.0.3.nupkg.sha512",
     "C:\\Users\\DerMokk\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.3\\microsoft.extensions.dependencyinjection.abstractions.9.0.3.nupkg.sha512",
     "C:\\Users\\DerMokk\\.nuget\\packages\\microsoft.extensions.dependencymodel\\8.0.0\\microsoft.extensions.dependencymodel.8.0.0.nupkg.sha512",
+    "C:\\Users\\DerMokk\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\8.0.0\\microsoft.extensions.diagnostics.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\DerMokk\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks\\8.0.0\\microsoft.extensions.diagnostics.healthchecks.8.0.0.nupkg.sha512",
+    "C:\\Users\\DerMokk\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks.abstractions\\8.0.0\\microsoft.extensions.diagnostics.healthchecks.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\DerMokk\\.nuget\\packages\\microsoft.extensions.diagnostics.healthchecks.entityframeworkcore\\8.0.0\\microsoft.extensions.diagnostics.healthchecks.entityframeworkcore.8.0.0.nupkg.sha512",
+    "C:\\Users\\DerMokk\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0\\microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\DerMokk\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\8.0.0\\microsoft.extensions.hosting.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\DerMokk\\.nuget\\packages\\microsoft.extensions.identity.core\\9.0.3\\microsoft.extensions.identity.core.9.0.3.nupkg.sha512",
     "C:\\Users\\DerMokk\\.nuget\\packages\\microsoft.extensions.identity.stores\\9.0.3\\microsoft.extensions.identity.stores.9.0.3.nupkg.sha512",
     "C:\\Users\\DerMokk\\.nuget\\packages\\microsoft.extensions.logging\\9.0.3\\microsoft.extensions.logging.9.0.3.nupkg.sha512",
